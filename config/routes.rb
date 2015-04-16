@@ -1,6 +1,22 @@
 Rails.application.routes.draw do
+  get 'sessions/create'
+
+  get 'sessions/destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
+
+  resources :users, :needs, :challenges, :achievements
+
+
+
+  #the sessions#continue action should prompt users for more information like school name
+  get "/signin" => "sessions#create", :as => :signout
+  get "/signout" => "sessions#destroy", :as => :signin
+
+
+
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
