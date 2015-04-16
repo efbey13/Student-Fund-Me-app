@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'welcome/home'
+
   get 'achievements/create'
 
   get 'challenges/edit'
@@ -24,11 +26,14 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :challenges, :achievements
+  root :to => 'welcome#home'
 
   resources :users do
     resources :needs
+    resources :challenges
+    resources :achievements
   end
+
 
 
   #the sessions#continue action should prompt users for more information like school name
