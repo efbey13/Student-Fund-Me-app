@@ -24,11 +24,13 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :challenges, :achievements
 
   resources :users do
     resources :needs
+    resources :challenges
+    resources :achievements
   end
+
 
 
   #the sessions#continue action should prompt users for more information like school name
