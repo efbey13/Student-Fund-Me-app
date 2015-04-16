@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StudentFundMeApp</title>
+  <title>HandUp</title>
+  <meta charset="utf-8">
+  <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= javascript_include_tag 'application' %>
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
 </head>
+
 <body>
-
 <%= yield %>
-
 </body>
 </html>
