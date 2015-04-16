@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   #the sessions#continue action should prompt users for more information like school name
   get "/signin" => 'users#new', :as => :signin
   get "/signout" => "sessions#destroy", :as => :signout
-  get '/auth/linkedin/callback', to: 'session#create'
+  get '/auth/linkedin/callback', to: 'sessions#create'
 
 
 
