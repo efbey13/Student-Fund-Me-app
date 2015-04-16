@@ -1,9 +1,9 @@
 class CreateNeeds < ActiveRecord::Migration
   def change
     create_table :needs do |t|
-      t.title :string
-      t.start_date :date
-      t.end_date :date
+      t.string :title
+      t.date :start_date
+      t.date :end_date
       t.timestamps null: false
     end
   end

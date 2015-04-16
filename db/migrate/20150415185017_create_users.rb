@@ -1,22 +1,21 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
-      t.profile_photo :string
-      t.first_name :string
-      t.last_name :string
-      t.email :string
-      t.skills :string
-      t.school_name :string
-      t.major :string
-      t.gender :string
-      t.race :string
-      t.location :string
-      t.gpa :float
-      t.status :string
-      t.total_received :float
-      t.total_given :float
-      t.bio :string
-      t.discoverable :boolean
+      t.string :profile_photo
+      t.string :first_name
+      t.string :last_name
+      t.string :email
+      t.string :school_name
+      t.string :major
+      t.string :gender
+      t.string :race
+      t.string :location
+      t.float :gpa
+      t.string :status
+      t.float :total_received
+      t.float :total_given
+      t.string :bio
+      t.boolean :discoverable 
       t.timestamps null: false
     end
   end
