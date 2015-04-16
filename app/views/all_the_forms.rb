@@ -28,10 +28,35 @@ Create A Challenge [Sponsors View]
   <%= f.submit %>
 <% end %>
 
-Accept Challenge (Student View)
+Accept Challenge / Deny Challenge  (Student View) (link)
 
+Button: Follow / unfollow (conditional) (link) 
+"follow#action(addto or remove out of database followers.all)"
+Button: Sponsor Student (link) #Once you pay up you become a sponsor
 
-
-Button: Folllow / unfollow (conditional)
-Button: Sponsor Student
 Create A Challenge [Sponsors View]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
