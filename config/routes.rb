@@ -1,4 +1,22 @@
 Rails.application.routes.draw do
+  get 'achievements/create'
+
+  get 'challenges/edit'
+
+  get 'challenges/delete'
+
+  get 'challenges/create'
+
+  get 'challenges/update'
+
+  get 'users/edit'
+
+  get 'users/delete'
+
+  get 'users/create'
+
+  get 'users/update'
+
   get 'sessions/create'
 
   get 'sessions/destroy'
@@ -6,8 +24,11 @@ Rails.application.routes.draw do
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
-  resources :users, :needs, :challenges, :achievements
+  resources :challenges, :achievements
 
+  resources :users do
+    resources :needs
+  end
 
 
   #the sessions#continue action should prompt users for more information like school name
