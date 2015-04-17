@@ -24,6 +24,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-linkedin'
+gem 'draper'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
