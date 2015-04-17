@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <%= form_for(@user, url: {action: 'update'}) do |f| %>
 <%= f.label :school_name, "School Name"%>
 <%= f.text_field :school_name %><br/>
@@ -15,6 +16,13 @@
 <%= f.text_area(:bio, cols: 20, rows: 5) %><br>
 
 
+=======
+<%= form_for(@user) do |f| %>
+<%= f.label :school_name, "Select School Name"%>
+<%= f.text_field :school_name %><br/>
+<%= f.label :race, "Race" %>
+<%= f.text_field :race %><br/>
+>>>>>>> Stashed changes
 
 <%= f.submit 'Join Us'%>
 <% end %>
