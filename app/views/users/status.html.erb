@@ -1,0 +1,8 @@
+<%= form_for(@user, url: {action: 'status_selected', method: :patch}) do |f| %>
+<%= f.label :status, "Select student or sponsor" %><br/>
+<%= f.label :status_student, "Student" %>
+<%= f.radio_button :status, 'student' %>
+<%= f.label :status_sponsor, "Sponsor" %>
+<%= f.radio_button :status, 'sponsor'%>
+<%= f.submit 'Submit Status'%>
+<% end %>

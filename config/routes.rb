@@ -41,7 +41,10 @@ Rails.application.routes.draw do
   get "/signout" => "sessions#destroy", :as => :signout
   get '/auth/linkedin/callback', to: 'sessions#create'
 
+  get '/users/:id/status' => 'users#status', as: 'select_status'
+  patch '/users/:id/status' => 'users#status_selected', as: 'status_selected'
 
+  get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
