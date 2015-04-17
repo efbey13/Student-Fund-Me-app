@@ -20,11 +20,161 @@
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
-body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+/* line 25, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a {
+  color: #101010;
 }
 
+/* line 26, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a:link {
+  color: #101010;
+  text-decoration: none;
+}
+
+/* line 27, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a:visited {
+  color: #101010;
+  text-decoration: none;
+}
+
+/* line 28, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a:hover {
+  color: #101010;
+  text-decoration: none;
+}
+
+/* line 29, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a:active {
+  color: #101010;
+  text-decoration: none;
+}
+
+/* line 31, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* line 36, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+nav#home {
+  width: 100vw;
+  height: 70px;
+  min-width: 650px;
+  border-bottom: 2px solid #f8f8f8;
+}
+
+/* line 42, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.nav-inner-wrap {
+  margin: 20px;
+  overflow: auto;
+  height: 50px;
+}
+
+/* line 47, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.nav-inner-wrap img {
+  margin-left: 50px;
+  display: inline-block;
+}
+
+/* line 52, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.nav-links {
+  display: inline-block;
+  padding-right: 100px;
+  text-align: right;
+  float: right;
+  margin-top: 15px;
+}
+
+/* line 60, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.nav-links a {
+  margin-right: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+}
+
+/* line 66, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+main#content {
+  width: 100vw;
+  min-width: 650px;
+  margin: 0;
+  background: pink;
+  overflow: auto;
+}
+
+/* line 74, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.carousel-inner {
+  z-index: 0;
+}
+
+/* line 75, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.carousel-inner img {
+  width: 100vw;
+  height: 100vh;
+  min-width: 650px;
+  z-index: 0;
+}
+
+/* line 81, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.box {
+  width: 30px;
+  height: 30px;
+  background: red;
+}
+
+/* line 87, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+#footer {
+  margin-top: 0px;
+  width: 100vw;
+  min-width: 650px;
+  padding: 0px 30px;
+  background: #fff;
+}
+
+/* line 95, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.footer-inner-wrap {
+  border: 1px solid red;
+  overflow: auto;
+}
+
+/* line 101, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.column-wrap {
+  margin: 0 auto;
+  border: 1px solid green;
+  overflow: auto;
+  display: inline-block;
+}
+
+/* line 107, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.column-1, .column-2, .column-3 {
+  width: 20vw;
+  height: 200px;
+  margin: 3vw;
+  border: 1px solid blue;
+  display: inline-block;
+}
+
+@media screen and (max-width: 750px) {
+  /* line 116, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+  .column-1, .column-2, .column-3 {
+    width: 500px;
+    height: 200px;
+    margin: 50px auto;
+    border: 1px solid blue;
+    display: block;
+    clear: both;
+  }
+}
+/* line 134, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.theme-dropdown .dropdown-menu {
+  position: static;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* line 140, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+.theme-showcase > p > .btn {
+  margin: 5px 0;
+}
 .theme-dropdown .dropdown-menu {
   position: static;
   display: block;
