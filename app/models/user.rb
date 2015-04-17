@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   has_many :student_sponsors
   has_many :sponsors, :class_name => 'StudentSponsor', :foreign_key => :sponsor_id
   has_many :students, :class_name => 'StudentSponsor', :foreign_key => :student_id
+  # after_create :confirm_status
 
   def self.create_with_omniauth(auth)
     create! do |user|
@@ -13,5 +14,9 @@ class User < ActiveRecord::Base
       user.last_name = auth["info"]["last_name"]
       user.email = auth["info"]["email"]
     end
+  end
+
+  def student?
+    self.status.downcase == 'student'
   end
 end
