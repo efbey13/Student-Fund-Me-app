@@ -9,6 +9,12 @@ class UsersController < ApplicationController
   end
 
   def update
+    @user = User.find(params[:id])
+    if @user.update(student_params)
+      redirect_to user_path(@user)
+    else
+      redirect_to student_edit_path(@user)
+    end
   end
 
   def show
@@ -37,5 +43,9 @@ class UsersController < ApplicationController
 
   def status_params
     params.require(:user).permit(:status)
+  end
+
+  def student_params
+    params.require(:user).permit(:school_name, :race, :major, :gpa, :location, :bio, :gender)
   end
 end
