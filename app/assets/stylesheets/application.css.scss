@@ -20,9 +20,135 @@
  */
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
+/* line 25, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a {color: #101010;}
+  a:link {
+  color: #101010;
+  text-decoration: none;}
+  a:visited {
+  color: #101010;
+  text-decoration: none;}
+  a:hover {
+  color: #101010;
+  text-decoration: none;
+  }
+  a:active {
+  color: #101010;
+  text-decoration: none;}
+
 body {
-  padding-top: 70px;
-  padding-bottom: 30px;
+  margin: 0;
+  padding: 0;
+}
+nav#home {
+  width: 100vw;
+  height: 70px;
+  min-width: 650px;
+  border-bottom: 2px solid #f8f8f8;
+  }
+  .nav-inner-wrap {
+  margin: 20px;
+  overflow: auto;
+  height: 50px;
+  }
+  .nav-inner-wrap img {
+  margin-left: 50px;
+  display: inline-block;
+  }
+  .nav-links {
+  display: inline-block;
+  padding-right: 100px;
+  text-align: right;
+  float: right;
+  margin-top: 15px;
+  }
+  .nav-links a {
+  margin-right: 10px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  }
+
+main#content {
+  width: 100vw;
+  min-width: 650px;
+  margin: 0;
+  background: pink;
+  overflow: auto;
+  }
+  .carousel-inner {
+    z-index: 0;
+    }
+    .carousel-inner img {
+    width: 100vw;
+    height: 100vh;
+    min-width: 650px;
+    z-index: 0;
+    }
+    .box {
+    width: 30px;
+    height: 30px;
+    background: red;
+    }
+
+#footer {
+  margin-top: 0px;
+  width: 100vw;
+  min-width: 650px;
+  background: #fff;
+  }
+  .footer-inner-wrap {
+  // border: 1px solid red;
+  overflow: auto;
+  min-width:650px;
+  }
+  .column-wrap {
+  margin: 0px 1.5vw;
+  // border: 1px solid green;
+  overflow: auto;
+  display: inline-block;
+  }
+  .column-1, .column-2, .column-3 {
+  position:relative;
+  width: 26vw;
+  height: 200px;
+  margin: 3vw;
+  // border: 1px solid blue;
+  display: inline-block;
+  }
+
+@media screen and (max-width: 750px) {
+  .column-1, .column-2, .column-3 {
+    width: 87vw;
+    min-width:550px;
+    height: 200px;
+    margin: 50px auto;
+    display: block;
+    clear: both;
+  }
+  .column-wrap {
+    margin:0 50px;
+  }
+
+}
+@media screen and (max-width: 1200px) and (min-width: 750px) {
+  .column-1, .column-2 {
+    width: 39vw;
+    height: 300px;
+    margin: 3.4vw;
+    display: inline-block;
+    clear: both;
+  }
+  .column-3 {
+    width: 86vw;
+    height: 300px;
+    display: block;
+    clear: both;
+  }
+  .column-wrap {
+    margin:0px 3.6vw;
+    overflow: auto;
+    display: inline-block;
+    }
 }
 
 .theme-dropdown .dropdown-menu {
@@ -30,7 +156,6 @@ body {
   display: block;
   margin-bottom: 20px;
 }
-
 .theme-showcase > p > .btn {
   margin: 5px 0;
 }
