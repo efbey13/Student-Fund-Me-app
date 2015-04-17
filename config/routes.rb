@@ -45,6 +45,7 @@ Rails.application.routes.draw do
   patch '/users/:id/status' => 'users#status_selected', as: 'status_selected'
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
+  get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'

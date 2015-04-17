@@ -38,4 +38,8 @@ class UsersController < ApplicationController
   def status_params
     params.require(:user).permit(:status)
   end
+
+  def user_profile
+    @user
+  end
 end
