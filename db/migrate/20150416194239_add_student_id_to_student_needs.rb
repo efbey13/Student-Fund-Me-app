@@ -1,6 +1,5 @@
 class AddStudentIdToStudentNeeds < ActiveRecord::Migration
   def change
-    add_reference :student_needs, :student, index: true
-    add_foreign_key :student_needs, :students
+    add_column :student_needs, :student_id, :integer
   end
 end
