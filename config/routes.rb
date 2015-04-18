@@ -28,6 +28,8 @@ Rails.application.routes.draw do
 
   root :to => 'welcome#home'
 
+  resources :needs
+
   resources :users do
     resources :needs
     resources :challenges
