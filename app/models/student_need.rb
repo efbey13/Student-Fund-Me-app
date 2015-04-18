@@ -1,5 +1,4 @@
 class StudentNeed < ActiveRecord::Base
-  belongs_to :student , :class_name => 'User'
-  # belongs_to :student, :class_name => 'StudentSponsor', :foreign_key => :student_id
-  belongs_to :needs
+  belongs_to :student , class_name: 'User', :foreign_key => :user_id
+  belongs_to :need
 end
