@@ -58,7 +58,7 @@ class UsersController < ApplicationController
 
   def student_params
     params.require(:user).permit(:school_name, :race, :major, :gpa, :location, :bio, :gender)
-    params.require(:current_user).permit(:follow_id, :current_id, :user_id, :sponsored)
+    # params.require(:current_user).permit(:follow_id, :current_id, :user_id, :sponsored)
   end
 
 

@@ -52,6 +52,8 @@ Rails.application.routes.draw do
   post '/users/:id' => 'users#follow'
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
+  get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
+
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
