@@ -48,6 +48,8 @@ Rails.application.routes.draw do
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
 
+  get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
+
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
 
