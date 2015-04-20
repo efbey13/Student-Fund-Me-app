@@ -1,0 +1,8 @@
+<h1><%= @student_need.need.title %></h1>
+
+<p>
+  This need was created <%= @student_need.start_date.to_formatted_s(:long) %>.
+</p><br/>
+<p>
+  This need requires <%= @student_need.need_expense %> dollars to be met.
+</p>

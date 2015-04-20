@@ -11,6 +11,16 @@
 </p>
 
 
+
+<h1>Needs</h1>
+<% current_user.student_needs.each do |student_need| %>
+  <p>
+    <%= link_to student_need.need.title, student_need_path(student_need) %><br/>
+    Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
+    End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
+  </p>
+<%end%>
+
   <%= form_tag(:action => 'follow') do %>
   <table>
     <tr>
