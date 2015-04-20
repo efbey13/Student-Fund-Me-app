@@ -19,7 +19,7 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
-    
+
     @sponsored_students = @user.sponsored_students
   end
 
@@ -43,8 +43,8 @@ class UsersController < ApplicationController
 
 
   def follow
-
-    studnet_sponsors.create(student_id => params[:id], sponsor_id => current_user.id)
+    StudentSponsor.create(:student_id => params[:id], :sponsor_id => current_user.id)
+    redirect_to user_path(current_user)
   end
 
 

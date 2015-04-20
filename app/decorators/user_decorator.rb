@@ -11,7 +11,7 @@ class UserDecorator < Draper::Decorator
 
   def has_major
     if model.student?
-      h.content_tag(:p, )
+      h.content_tag(:p, model.major)
     else
 
     end
@@ -19,7 +19,7 @@ class UserDecorator < Draper::Decorator
 
   def has_gpa
     if model.student?
-      h.content_tag(:p, )
+      h.content_tag(:p, model.gpa )
     else
 
     end
