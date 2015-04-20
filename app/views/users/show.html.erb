@@ -11,30 +11,33 @@
 </p>
 
 
+        <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
+        <h1>Needs</h1>
+        <% current_user.student_needs.each do |student_need| %>
+          <p>
+            <%= link_to student_need.need.title, student_need_path(student_need) %><br/>
+            Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
+            End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
+          </p>
+        <%end%>
 
-<h1>Needs</h1>
-<% current_user.student_needs.each do |student_need| %>
-  <p>
-    <%= link_to student_need.need.title, student_need_path(student_need) %><br/>
-    Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
-    End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
-  </p>
-<%end%>
+        <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
+<% if current_user.status == "sponsor" && current_user.id != @user.id %>
+        <%= form_tag(:action => 'follow') do %>
+        <table>
+          <tr>
+            <!-- <td><%= label_tag(:follow_id) %></td> -->
+            <td><%= hidden_field_tag(@user.id) %></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td><%= submit_tag('Follow') %></td>
+          </tr>
+        </table>
+        <% end %>
 
-  <%= form_tag(:action => 'follow') do %>
-  <table>
-    <tr>
-      <!-- <td><%= label_tag(:follow_id) %></td> -->
-      <td><%= hidden_field_tag(@user.id) %></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td><%= submit_tag('Follow') %></td>
-    </tr>
-  </table>
-  <% end %>
-
-<h1>Following</h1>
-<% @sponsored_students.each do |student| %>
-    <%= student.student.first_name %> <br/>
-  <% end %>
+      <h1>Following</h1>
+      <% @sponsored_students.each do |student| %>
+          <%= student.student.first_name %> <br/>
+      <% end %>
+<% end %>
