@@ -10,7 +10,6 @@ class NeedsController < ApplicationController
     @user = User.find(params[:user_id])
     @student_need = @user.student_needs.build(need_id: @need.id, start_date: Time.now,end_date: need_params[:end_date])
     @student_need.save
-    binding.pry
     redirect_to user_path(@user)
   end
 
