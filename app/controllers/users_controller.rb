@@ -19,6 +19,8 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
+    
+    @sponsored_students = @user.sponsored_students
   end
 
   def status
@@ -41,7 +43,7 @@ class UsersController < ApplicationController
 
 
   def follow
-    binding.pry
+
     studnet_sponsors.create(student_id => params[:id], sponsor_id => current_user.id)
   end
 

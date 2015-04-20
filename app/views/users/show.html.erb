@@ -33,3 +33,8 @@
     </tr>
   </table>
   <% end %>
+
+<h1>Following</h1>
+<% @sponsored_students.each do |student| %>
+    <%= student.student.first_name %> <br/>
+  <% end %>
