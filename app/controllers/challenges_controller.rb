@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
   end
 
   def create
+    
   end
 
   def update

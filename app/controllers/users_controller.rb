@@ -39,6 +39,14 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+
+  def follow
+    binding.pry
+    studnet_sponsors.create(student_id => params[:id], sponsor_id => current_user.id)
+  end
+
+
+
   private
 
   def status_params
@@ -48,11 +56,12 @@ class UsersController < ApplicationController
 
   def student_params
     params.require(:user).permit(:school_name, :race, :major, :gpa, :location, :bio, :gender)
+    params.require(:current_user).permit(:follow_id, :current_id, :user_id, :sponsored)
   end
 
 
 
-  
+
   def user_profile
     @user
   end
