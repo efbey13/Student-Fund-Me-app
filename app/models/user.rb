@@ -28,4 +28,5 @@ class User < ActiveRecord::Base
   def student?
     self.status.downcase == 'student'
   end
+
 end

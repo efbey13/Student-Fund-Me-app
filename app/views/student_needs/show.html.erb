@@ -6,3 +6,9 @@
 <p>
   This need requires <%= @student_need.need_expense %> dollars to be met.
 </p>
+
+
+<%= form_for(@student_need, url: {action: 'new_path', method: :patch}) do |f|  %>
+<%= f.label :donation, "Donate to need" %>
+<%= f.text_field :donation %><br/>
+<% end %>

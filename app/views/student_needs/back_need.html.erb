@@ -1,0 +1,7 @@
+<h1><%= @student_need.need.title %></h1>
+
+<%= form_tag("/sponsor_needs/back_need") do %>
+
+<%= hidden_field :student_need_id, value: @student_need.id %>
+<%= submit_tag 'Back Student!' %>
+<% end %>
