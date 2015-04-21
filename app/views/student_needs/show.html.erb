@@ -7,6 +7,8 @@
   This need requires <%= @student_need.need_expense %> dollars to be met.
 </p>
 
-<% unless current_user.student? %>
-  <%= link_to 'Donate to need!', back_need_path(@student_need) %>
+
+<%= form_for(@student_need, url: {action: 'new_path', method: :patch}) do |f|  %>
+<%= f.label :donation, "Donate to need" %>
+<%= f.text_field :donation %><br/>
 <% end %>
