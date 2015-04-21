@@ -1,4 +1,8 @@
-
+  <!-- VIEW FOR NON CURRENT USER ||||||||||||||||||||||||||| -->
+<% if !current_user %>
+  <div><h5>You are not signed in.</h5></div>
+<% end %>
+  <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
 <h1>Welcome, <%= @user.first_name %> </h1>
 <p>
   <%= current_user.race %>
@@ -23,6 +27,11 @@
 
         <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
+  <!-- Leah's changes -->
+  <h1>Welcome, <%= @user.first_name %> </h1>
+  <h3><%= link_to "I need a student to sponsor", new_search_path %></h3>
+  <!-- Leah's changes -->
+
         <%= form_tag(:action => 'follow') do %>
         <table>
           <tr>
@@ -41,3 +50,4 @@
           <%= student.student.first_name %> <br/>
       <% end %>
 <% end %>
+
