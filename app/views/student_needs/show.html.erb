@@ -6,12 +6,3 @@
 <p>
   This need requires <%= @student_need.need_expense %> dollars to be met.
 </p>
-
-
-<%= form_for(@student_need, url: {action: 'need_backed', method: :post}) do |f|  %>
-<%= f.label :amount, "amount" %>
-<%= f.text_field :amount %><br/>
-
-
-<%= f.submit 'Donate'%>
-<% end %>
