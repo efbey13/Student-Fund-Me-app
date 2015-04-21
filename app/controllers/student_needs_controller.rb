@@ -4,6 +4,6 @@ class StudentNeedsController < ApplicationController
   end
 
   def back_need
-    binding.pry
+    @student_need = StudentNeed.find(params[:id])
   end
 end
