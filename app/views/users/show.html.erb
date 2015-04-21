@@ -1,10 +1,5 @@
 
-
-          <!-- VIEW FOR NON CURRENT USER ||||||||||||||||||||||||||| -->
-        <% if !current_user %>
-          <div><h5>You are not signed in.</h5></div>
-        <% end %>
-          <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
+        <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
         <h1>Welcome, <%= @user.first_name %> </h1>
 <% if current_user.status == "student" && current_user.id != @user.id %>
         <p>
@@ -17,22 +12,27 @@
           <%= link_to "Create a Need", new_user_need_path(current_user) %>
         </p>
 
-
-
         <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
+<% if current_user.status == "student" && current_user.id != @user.id %>
+        <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
+        <!-- List Needs -->
         <h1>Needs</h1>
         <% current_user.student_needs.each do |student_need| %>
-          <p>
-            <%= link_to student_need.need.title, student_need_path(student_need) %><br/>
+        <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
             Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
             End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
-          </p>
+        </p>
         <%end%>
+<% end %>
 
 
 <% end %>
         <!-- SEARCH LINK FOR A USER ||||||||||||||||||||||||||| -->
+        <% if @user.id != current_user.id && current_user.status == 'sponsor' %>
+        <% else %>
         <h3><%= link_to "I need a student to sponsor", new_search_path %></h3>
+
+        <% end %>
 
         <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
