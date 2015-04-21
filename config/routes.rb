@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
 
-
+  post '/searches/create' => 'searches#create'
   #the sessions#continue action should prompt users for more information like school name
   get "/signin" => 'users#new', :as => :signin
   get "/signout" => "sessions#destroy", :as => :signout
@@ -54,12 +54,14 @@ Rails.application.routes.draw do
   post '/users/:id' => 'users#follow'
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
+
   get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
 
   post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
 
   # should this route ^^^ take you to the view that confirms that the student need has been met
   # Or is it refering to the view where the form where sponsors can back the need/donate?
+
 
 
 

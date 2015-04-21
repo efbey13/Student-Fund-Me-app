@@ -1,6 +1,6 @@
 <h3>Find a student to sponsor</h3>
 
-<%= form_for @search, html: {class: "pure-form"} do |f| %>
+<%= form_for @search do |f| %>
   <%= f.label :first_name, "First Name" %>
   <%= f.text_field :first_name %><br>
 
@@ -28,4 +28,4 @@
 <%= f.submit "Find a Student", class: "btn btn-default btn-sm" %>
 <% end %>
 
-<p><%= link_to "back", user_path %></p>
+<%= link_to 'back', user_path(current_user)%>

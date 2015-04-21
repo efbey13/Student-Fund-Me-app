@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
 
     @sponsored_students = @user.sponsored_students
+
   end
 
   def status
@@ -46,7 +47,6 @@ class UsersController < ApplicationController
     StudentSponsor.create(:student_id => params[:id], :sponsor_id => current_user.id)
     redirect_to user_path(current_user)
   end
-
 
 
   private
