@@ -52,9 +52,9 @@ private
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-need a form to index through all of the students that need a sponsor 
+need a form to index through all of the students (students.all) that need a sponsor 
 maybe a category to filter results like by major, school, gpa 
-if they select biology then students.all where(sponsor = 0 && major = biology)
+if they select biology then students.all where(sponsor = false && major = biology)
 
 to get the drop down menus
 collection_select(object, method, collection, value_method, text_method, options = {}, html_options = {})
@@ -69,7 +69,6 @@ Accept Challenge / Decline Challenge (Student View) (link)
 #Student set semester dates before sponsor offer challenges
 #only set challenges in the beginning of semester (1 month)
 #validation - if today's date before semester start_date
-#validation so student can't change date after date has been set
 
 In User model user.rb
 

@@ -30,6 +30,8 @@ Rails.application.routes.draw do
 
   resources :needs
 
+  resources :searches
+
   resources :users do
     resources :needs
     resources :challenges

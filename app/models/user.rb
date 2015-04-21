@@ -29,4 +29,8 @@ class User < ActiveRecord::Base
     self.status.downcase == 'student'
   end
 
+  def sponsor?
+    self.status.downcase == 'sponsor'
+  end
+
 end
