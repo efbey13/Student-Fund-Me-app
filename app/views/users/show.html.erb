@@ -1,14 +1,4 @@
 
-        <h1>Welcome, <%= @user.first_name %> </h1>
-        <p>
-          <%= current_user.race %>
-        </p>
-        <p>
-          <%= current_user.school_name %>
-        </p>
-        <p>
-          <%= link_to "Create a Need", new_user_need_path(current_user) %>
-        </p>
 
           <!-- VIEW FOR NON CURRENT USER ||||||||||||||||||||||||||| -->
         <% if !current_user %>
@@ -16,13 +6,13 @@
         <% end %>
           <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
         <h1>Welcome, <%= @user.first_name %> </h1>
+<% if current_user.status == "student" && current_user.id != @user.id %>
         <p>
           <%= current_user.race %>
         </p>
         <p>
           <%= current_user.school_name %>
         </p>
-<% if current_user.status == "student" && current_user.id != @user.id %>
         <p>
           <%= link_to "Create a Need", new_user_need_path(current_user) %>
         </p>
@@ -40,9 +30,9 @@
         <%end%>
 
 
+<% end %>
         <!-- SEARCH LINK FOR A USER ||||||||||||||||||||||||||| -->
         <h3><%= link_to "I need a student to sponsor", new_search_path %></h3>
-<% end %>
 
         <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
@@ -58,9 +48,8 @@
           </tr>
         </table>
         <% end %>
-<% end %>
-
       <h1>Following</h1>
       <% @sponsored_students.each do |student| %>
           <%= student.student.first_name %> <br/>
       <% end %>
+<% end %>
