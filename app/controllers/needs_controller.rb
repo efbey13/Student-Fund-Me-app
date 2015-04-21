@@ -22,8 +22,8 @@ class NeedsController < ApplicationController
 
   def new
     @need = Need.new
-    user = User.find(params[:user_id])
-    @student_need = user.student_needs.build
+    @user = User.find(params[:user_id])
+    @student_need = @user.student_needs.build
   end
 
   private

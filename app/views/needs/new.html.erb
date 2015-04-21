@@ -1,13 +1,15 @@
 <h1>Create a Need.</h1>
 
-<%= form_for (@need) do |f| %>
+<% if current_user.status == "student" && current_user.id != @user.id %>
+  <%= form_for (@need) do |f| %>
 
-  <%= f.label :title %>
-  <%= f.text_field :title %><br />
-  <%= f.label :end_date%>
-  <%= f.date_field :end_date %><br />
-  <%= f.label :category %>
-  <%= f.text_field :category %><br />
-  <%= hidden_field_tag 'user_id', current_user.id %>
-  <%= f.submit %>
+    <%= f.label :title %>
+    <%= f.text_field :title %><br />
+    <%= f.label :end_date%>
+    <%= f.date_field :end_date %><br />
+    <%= f.label :category %>
+    <%= f.text_field :category %><br />
+    <%= hidden_field_tag 'user_id', current_user.id %>
+    <%= f.submit %>
+  <% end %>
 <% end %>
