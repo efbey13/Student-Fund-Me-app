@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
 
     @sponsored_students = @user.sponsored_students
+
   end
 
   def status

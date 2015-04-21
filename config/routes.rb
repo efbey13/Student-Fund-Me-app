@@ -39,7 +39,7 @@ Rails.application.routes.draw do
   end
 
 
-
+  post '/searches/create' => 'searches#create'
   #the sessions#continue action should prompt users for more information like school name
   get "/signin" => 'users#new', :as => :signin
   get "/signout" => "sessions#destroy", :as => :signout
