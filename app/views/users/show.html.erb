@@ -10,6 +10,7 @@
 <p>
   <%= current_user.school_name %>
 </p>
+<% if current_user.status == "student" && current_user.id != @user.id %>
 <p>
   <%= link_to "Create a Need", new_user_need_path(current_user) %>
 </p>
@@ -24,7 +25,7 @@
             End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
           </p>
         <%end%>
-
+<% end %>
         <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
   <!-- Leah's changes -->
@@ -50,4 +51,3 @@
           <%= student.student.first_name %> <br/>
       <% end %>
 <% end %>
-
