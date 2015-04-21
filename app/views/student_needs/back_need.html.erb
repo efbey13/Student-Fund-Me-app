@@ -3,5 +3,6 @@
 <%= form_tag("/sponsor_needs/back_need") do %>
 
 <%= hidden_field :student_need_id, value: @student_need.id %>
+<%= text_field_tag (:amount) %>
 <%= submit_tag 'Back Student!' %>
 <% end %>
