@@ -48,7 +48,6 @@ class UsersController < ApplicationController
   end
 
 
-
   private
 
   def status_params

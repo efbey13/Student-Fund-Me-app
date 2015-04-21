@@ -2,17 +2,22 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#user-wrap {
+  background:#f8f8f8;
+}
+
 nav#user-nav{
   width: 100vw;
   height: 50px;
   min-width: 650px;
-  border-bottom: 2px solid #f8f8f8;
+  background:#fff;
+  box-shadow: 0 4px 2px -2px #ddd;
   }
   .user-nav-inner-wrap {
   margin: 5px;
   overflow: auto;
   height: 45px;
-  border:1px solid red;
+  // border:1px solid red;
   }
   .user-nav-inner-wrap img {
   margin-left: 50px;
@@ -40,4 +45,36 @@ nav#user-nav{
   margin-right: 10px;
   border: 1px solid transparent;
   border-radius: 10px;
+  }
+
+main#user_content {
+  margin:20px auto;
+  width:90vw;
+  min-width:700px;
+  height:90vh;
+  padding:15px;
+  border: 2px solid #59AEA1;// #7DAF9C;
+  }
+  .user-content-inner-wrap {
+    // width:85vw;
+    // height:85vh;
+    padding:15px;
+    background:#fff;
+    border:1px solid red;
+
+  }
+  .profile-photo {
+    width:150px;
+    height:150px;
+    border:5px solid #fff;
+    background:#f8f8f8;
+    border-radius:3px;
+    box-shadow: 0px 0px 5px #888;
+  }
+  .content-links {
+    margin:0 auto;
+    width:800px;
+    height:50px;
+    background:#D2D7DF;
+
   }

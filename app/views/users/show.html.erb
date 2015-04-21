@@ -21,6 +21,7 @@
           </p>
         <%end%>
 
+
         <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
         <%= form_tag(:action => 'follow') do %>
