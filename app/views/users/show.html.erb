@@ -1,19 +1,16 @@
 
-        <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
+        <% if current_user.id == @user.id%>
         <h1>Welcome, <%= @user.first_name %> </h1>
-<% if current_user.status == "student" && current_user.id != @user.id %>
-        <p>
-          <%= current_user.race %>
-        </p>
-        <p>
-          <%= current_user.school_name %>
-        </p>
-        <p>
-          <%= link_to "Create a Need", new_user_need_path(current_user) %>
-        </p>
-
+        <% else %>
+        <%= @user.first_name %>
+        <%end%>
+        <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
+<% if @user.status == "student" && current_user.id != @user.id %>
+        <p><%= @user.race %></p>
+        <p><%= @user.school_name %></p>
+<% end %>
         <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
-<% if current_user.status == "student" && current_user.id != @user.id %>
+<% if current_user.status == 'student' %>
         <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
         <!-- List Needs -->
         <h1>Needs</h1>
@@ -25,8 +22,6 @@
         <%end%>
 <% end %>
 
-
-<% end %>
         <!-- SEARCH LINK FOR A USER ||||||||||||||||||||||||||| -->
         <% if @user.id != current_user.id && current_user.status == 'sponsor' %>
         <% else %>
