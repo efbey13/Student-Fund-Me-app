@@ -3,18 +3,18 @@
 <% if @search.search_students.empty? %>
   <p>No Student Found</p>
 <% else %>
-  <% @search.search_students.each do |f| %>
-  <!-- <h4><= f.profile_photo%></h4> not built out yet #add to search.rb-->
-  <h4><%= f.first_name %></h4>
-  <h4><%= f.last_name %></h4>
-  <p>Email: <%= f.email %></p>
-  <p><%= f.school_name %></p>
-  <p>Major: <%= f.major %></p>
-  <p>Gender: <%= f.gender %></p>
-  <p>Race: <%= f.race %></p>
-  <p>Location: <%= f.location %></p>
-  <p>Bio: <%= f.bio %></p>
-
+  <% @search.search_students.each do |student| %>
+  <!-- <h4><= student.profile_photo%></h4> not built out yet #add to search.rb-->
+  <h4><%= student.first_name %></h4>
+  <h4><%= student.last_name %></h4>
+  <p>Email: <%= student.email %></p>
+  <p><%= student.school_name %></p>
+  <p>Major: <%= student.major %></p>
+  <p>Gender: <%= student.gender %></p>
+  <p>Race: <%= student.race %></p>
+  <p>Location: <%= student.location %></p>
+  <p>Bio: <%= student.bio %></p>
+  <p><%= link_to 'students profile', user_path(student) %></p>
   <% end %>
 <% end %>
 
