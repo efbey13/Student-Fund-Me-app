@@ -25,6 +25,7 @@ gem 'figaro'
 gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'draper'
+gem 'omniauth-venmo'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
