@@ -1,7 +1,7 @@
 
 
 
-<% if current_user.identities.empty? %>
+<% if !!current_user.identity %>
   <a href="/auth/venmo">Link Your Venmo</a>
 <%end%>
 

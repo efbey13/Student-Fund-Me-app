@@ -16,7 +16,7 @@ class User < ActiveRecord::Base
   has_many :needs, through: :student_needs
 
 
-  has_many :identities
+  has_one :identity
 
   # validates :first_name, presence: true
   # validates :last_name, presence: true
