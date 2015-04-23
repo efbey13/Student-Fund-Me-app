@@ -12,6 +12,6 @@ class StudentSponsor < ActiveRecord::Base
     end
   end
 
-
+  
 
 end
