@@ -51,8 +51,9 @@ Rails.application.routes.draw do
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
   get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
-  # get '/users/:id' => 'users#follow'
-  post '/users/:id' => 'users#follow'
+  # get ''
+  post '/users/:id' => 'users#follow', as: 'user_followed'
+  post '/student_sponsors/create' => 'student_sponsors#create'
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
 

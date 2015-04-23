@@ -1,8 +1,15 @@
 
+
+
+
+
+
+
+
         <% if current_user.id == @user.id%>
         <h1>Welcome, <%= @user.first_name %> </h1>
         <% else %>
-        <%= @user.first_name %>
+        <h1><%= @user.first_name %></h1>
         <%end%>
         <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
 <% if @user.status == "student" && current_user.id != @user.id %>

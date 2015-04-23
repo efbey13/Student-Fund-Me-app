@@ -44,6 +44,7 @@ class UsersController < ApplicationController
 
 
   def follow
+    # binding.pry
     StudentSponsor.create(:student_id => params[:id], :sponsor_id => current_user.id)
     redirect_to user_path(current_user)
   end
