@@ -15,6 +15,8 @@ class User < ActiveRecord::Base
   has_many :student_needs
   has_many :needs, through: :student_needs
 
+  has_many :identites
+
   def self.create_with_omniauth(auth)
     create! do |user|
       user.provider = auth["provider"]
