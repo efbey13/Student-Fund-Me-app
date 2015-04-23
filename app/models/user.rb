@@ -24,6 +24,14 @@ class User < ActiveRecord::Base
   validates :race, presence: true
   validates :location, presence: true
   validates :gpa, presence: true
+  validates :school_name, presence: true
+
+  def self.create_and_send_email(email)
+    @user = User.create(:email => email)
+    UserMailer.welcome_email(@user).deliver
+    @user
+  end
+
 
   def self.create_with_omniauth(auth)
     create! do |user|
