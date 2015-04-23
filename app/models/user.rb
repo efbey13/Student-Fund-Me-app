@@ -16,17 +16,17 @@ class User < ActiveRecord::Base
   has_many :needs, through: :student_needs
 
 
-  has_many :identites
+  has_many :identities
 
-  validates :first_name, presence: true
-  validates :last_name, presence: true
-  validates :email, presence: true
-  validates :school_name, presence: true
-  validates :major, presence: true
-  validates :gender, presence: true
-  validates :race, presence: true
-  validates :location, presence: true
-  validates :gpa, presence: true
+  # validates :first_name, presence: true
+  # validates :last_name, presence: true
+  # validates :email, presence: true
+  # validates :school_name, presence: true
+  # validates :major, presence: true
+  # validates :gender, presence: true
+  # validates :race, presence: true
+  # validates :location, presence: true
+  # validates :gpa, presence: true
 
 
   def self.create_with_omniauth(auth)

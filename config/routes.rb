@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'identity/add_identity'
+
   get 'welcome/home'
 
   get 'achievements/create'
@@ -43,8 +45,9 @@ Rails.application.routes.draw do
   #the sessions#continue action should prompt users for more information like school name
   get "/signin" => 'users#new', :as => :signin
   get "/signout" => "sessions#destroy", :as => :signout
-  get '/auth/:provider/callback', to: 'sessions#create'
-  
+  get '/auth/linkedin/callback', to: 'sessions#create'
+  get '/auth/venmo/callback', to: 'identity#add_identity'
+
 
   get '/users/:id/status' => 'users#status', as: 'select_status'
   patch '/users/:id/status' => 'users#status_selected', as: 'status_selected'
