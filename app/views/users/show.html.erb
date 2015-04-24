@@ -54,10 +54,15 @@
         <% end %>
 <% end %>
       <h1>Following</h1>
-      <% @sponsored_students.each do |student| %>
-        
-          <%= student.student.first_name %> <br/>
-      <% end %>
+        <% @sponsored_students.each do |student| %>
+            <%= form_tag do |f| %>
+            <%= label_tag student.student.first_name %>
+            <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })
+        %>
+            <%= submit_tag('challenge') %>
+          <% end %>
+            <br/>
+         <% end %>
 
       <!-- USER CHALLENGE ||||||||||-->
       <h1>Challenges</h1>
