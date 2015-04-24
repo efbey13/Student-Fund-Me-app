@@ -5,14 +5,6 @@ Rails.application.routes.draw do
 
   get 'achievements/create'
 
-  get 'challenges/edit'
-
-  get 'challenges/delete'
-
-  get 'challenges/create'
-
-  get 'challenges/update'
-
   get 'users/edit'
 
   get 'users/delete'
@@ -36,9 +28,10 @@ Rails.application.routes.draw do
 
   resources :users do
     resources :needs
-    resources :challenges
     resources :achievements
+    resources :challenges
   end
+    post 'users/:id/challenges/new' => 'users#index'
 
 
   post '/searches/create' => 'searches#create'
@@ -54,7 +47,7 @@ Rails.application.routes.draw do
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
   get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
-  # get ''
+
   post '/users/:id' => 'users#follow', as: 'user_followed'
   post '/student_sponsors/create' => 'student_sponsors#create'
 
@@ -64,6 +57,7 @@ Rails.application.routes.draw do
 
   post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
 
+  # post '/user/id/challenges' => 'challenges#new'
   # should this route ^^^ take you to the view that confirms that the student need has been met
   # Or is it refering to the view where the form where sponsors can back the need/donate?
 

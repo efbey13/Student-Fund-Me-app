@@ -1,0 +1,12 @@
+<h1>Challenges#new</h1>
+<p>Find me in app/views/challenges/create.html.erb</p>
+<!-- SET A CHALLENGE ||||||||||||||||||||||||||| -->
+
+
+
+    <%= form_tag do |f| %>
+    <%= label_tag :name %>
+    <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })
+%>
+    <%= submit_tag('create challenge') %>
+  <% end %>
