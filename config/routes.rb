@@ -39,8 +39,6 @@ Rails.application.routes.draw do
     resources :challenges
     resources :achievements
   end
-
-
   post '/searches/create' => 'searches#create'
   #the sessions#continue action should prompt users for more information like school name
   get "/signin" => 'users#new', :as => :signin

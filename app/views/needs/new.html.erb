@@ -1,8 +1,7 @@
 <h1>Create a Need.</h1>
 
 <% if current_user.status == "student"%>
-  <%= form_for(@need, html:{mulitpart: true}) do |f| %>
-
+  <%= form_for(@need, html:{multipart: true}) do |f| %>
     <%= f.label :title %>
     <%= f.text_field :title %><br />
     <%= f.label :end_date%>
