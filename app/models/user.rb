@@ -15,6 +15,20 @@ class User < ActiveRecord::Base
   has_many :student_needs
   has_many :needs, through: :student_needs
 
+  has_many :student_challenges, :foreign_key => :sponsor_id
+  has_many :student_challenges, :foreign_key => :student_id
+  has_many :challenged_students, :class_name => "StudentChallenge", :foreign_key => :sponsor_id
+
+  has_many :challenges, :foreign_key=> 'sponsor_id'
+
+
+
+  def self.create_and_send_email(email)
+    @user = User.create(:email => email)
+    UserMailer.welcome_email(@user).deliver
+    @user
+  end
+
 
   has_one :identity
 
@@ -27,6 +41,7 @@ class User < ActiveRecord::Base
   # validates :race, presence: true
   # validates :location, presence: true
   # validates :gpa, presence: true
+
 
 
   def self.create_with_omniauth(auth)
