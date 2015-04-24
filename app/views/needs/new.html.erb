@@ -1,7 +1,7 @@
 <h1>Create a Need.</h1>
 
-<% if current_user.status == "student" && current_user.id != @user.id %>
-  <%= form_for (@need) do |f| %>
+<% if current_user.status == "student"%>
+  <%= form_for(@need, html:{mulitpart: true}) do |f| %>
 
     <%= f.label :title %>
     <%= f.text_field :title %><br />
@@ -9,6 +9,9 @@
     <%= f.date_field :end_date %><br />
     <%= f.label :category %>
     <%= f.text_field :category %><br />
+    <%= fields_for @student_need do |n| %>
+      <%= n.file_field :proof %>
+      <%end%>
     <%= hidden_field_tag 'user_id', current_user.id %>
     <%= f.submit %>
   <% end %>
