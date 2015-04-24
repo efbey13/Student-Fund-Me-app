@@ -5,8 +5,9 @@
   <meta charset="utf-8">
   <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
   <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'https://js.stripe.com/v1/', 'application' %>
   <%= csrf_meta_tags %>
+  <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
   <%= analytics_init if Rails.env.production? %>
 </head>
 

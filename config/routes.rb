@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     resources :achievements
     resources :challenges
   end
+
     post 'users/:id/challenges/new' => 'users#index'
 
 

@@ -26,7 +26,8 @@ gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'draper'
 gem 'omniauth-venmo'
-
+gem 'carrierwave'
+gem 'stripe-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
