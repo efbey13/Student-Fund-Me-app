@@ -44,8 +44,13 @@ class UsersController < ApplicationController
 
 
   def follow
+    @user = User.find(params[:id])
     # binding.pry
+    UserMailer.follow_email(current_user,@user).deliver_now
+    # binding.pry
+    # @user = User.create_and_send_email(student_params[:email])
     StudentSponsor.create(:student_id => params[:id], :sponsor_id => current_user.id)
+    flash[:notice] = "Following New Student"
     redirect_to user_path(current_user)
   end
 
@@ -58,7 +63,7 @@ class UsersController < ApplicationController
 
 
   def student_params
-    params.require(:user).permit(:school_name, :race, :major, :gpa, :location, :bio, :gender)
+    params.require(:user).permit(:email, :school_name, :race, :major, :gpa, :location, :bio, :gender)
     # params.require(:current_user).permit(:follow_id, :current_id, :user_id, :sponsored)
   end
 

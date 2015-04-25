@@ -15,15 +15,15 @@ class User < ActiveRecord::Base
   has_many :student_needs
   has_many :needs, through: :student_needs
 
+  has_one :identity
 
-  def self.create_and_send_email(email)
+  def self.send_email(email)
     @user = User.create(:email => email)
     UserMailer.welcome_email(@user).deliver
     @user
   end
 
 
-  has_one :identity
 
   # validates :first_name, presence: true
   # validates :last_name, presence: true
