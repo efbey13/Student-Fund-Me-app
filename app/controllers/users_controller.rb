@@ -21,6 +21,8 @@ class UsersController < ApplicationController
     @user  = User.find(params[:id])
 
     @sponsored_students = @user.sponsored_students
+    @students_of_challenge = current_user.challenged_students
+
 
   end
 
