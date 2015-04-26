@@ -8,10 +8,10 @@
   <%= f.text_field :last_name %><br>
 
   <%= f.label :email, "Student Email" %>
-  <%= f.email_field :email %><br>
+  <%= f.email_field :email, placeholder: "student@nyu.edu" %><br>
 
   <%= f.label :school_name, "School Name" %>
-  <%= f.select :school_name, options_for_select(@school_name) %><br>
+  <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete" %><br>
 
   <%= f.label :major, "Major" %>
   <%= f.select :major, options_for_select(@major) %><br>
@@ -20,12 +20,27 @@
   <%= f.select :gender, options_for_select(@gender) %><br>
 
   <%= f.label :race, "Race" %>
-  <%= f.select :race, options_for_select(@race) %><br>
+  <%= f.select :race, %w[white black asian indian hispanic], {include_blank: true} %><br>
+  
 
   <%= f.label :location, "Location" %>
-  <%= f.select :location, options_for_select(@location) %><br>
+  <%= f.text_field :location, placeholder: "Bronx, NY", id: "autocompleteloc" %><br>
 
 <%= f.submit "Find a Student", class: "btn btn-default btn-sm" %>
 <% end %>
 
-<%= link_to 'back', user_path(current_user)%>
+<%= link_to 'back', user_path(current_user)%><br>
+
+<script>
+  $( "#autocomplete" ).autocomplete({
+    source: <%= raw User.uniq.pluck(:school_name) %>
+  });
+</script>
+
+<script>
+  $( "#autocompleteloc" ).autocomplete({
+    source: <%= raw User.uniq.pluck(:location) %>
+  });
+</script>
+
+
