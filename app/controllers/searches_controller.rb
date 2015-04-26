@@ -7,8 +7,6 @@ class SearchesController < ApplicationController
     @gender = User.uniq.pluck(:gender)
     @race = User.uniq.pluck(:race)
     @location = User.uniq.pluck(:location)
-
-
   end
 
   def create

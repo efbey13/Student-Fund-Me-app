@@ -40,6 +40,11 @@ Rails.application.routes.draw do
     resources :achievements
   end
 
+  resources :search do
+    get :autocomplete_school_name, :on => :collection
+  end
+
+
 
   post '/searches/create' => 'searches#create'
   #the sessions#continue action should prompt users for more information like school name

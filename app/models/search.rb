@@ -1,8 +1,7 @@
 class Search < ActiveRecord::Base
 
   def search_students
-    non_sponsored_student = User.where(status: 'student')
-
+    non_sponsored_student = User.where(status: 'student') 
     # && where student sponsor is false or nil
 
     non_sponsored_student = non_sponsored_student.where(["first_name LIKE ?", "%#{first_name}%"]) if first_name.present?
@@ -15,6 +14,11 @@ class Search < ActiveRecord::Base
     non_sponsored_student = non_sponsored_student.where(["location LIKE ?", location]) if location.present?
 
     return non_sponsored_student
+  end
+
+  def leah
+    leahs = User.uniq.pluck(:school_name)
+    return leahs
   end
 
 end

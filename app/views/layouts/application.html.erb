@@ -4,8 +4,11 @@
   <title>HandUp</title>
   <meta charset="utf-8">
   <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <%= javascript_include_tag :defaults %> 
   <%= csrf_meta_tags %>
   <%= analytics_init if Rails.env.production? %>
 </head>
@@ -13,4 +16,5 @@
 <body>
 <%= yield %>
 </body>
+
 </html>
