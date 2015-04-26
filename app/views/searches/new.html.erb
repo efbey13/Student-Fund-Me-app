@@ -20,7 +20,7 @@
   <%= f.select :gender, options_for_select(@gender) %><br>
 
   <%= f.label :race, "Race" %>
-  <%= f.select :race, %w[white black asian indian hispanic], {include_blank: true} %><br>
+  <%= f.select :race, options_for_select(@race), {include_blank: true} %><br>
   
 
   <%= f.label :location, "Location" %>
