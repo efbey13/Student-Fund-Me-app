@@ -33,13 +33,8 @@ Rails.application.routes.draw do
   end
 
 
+
   post 'users/:id/challenges/new' => 'users#index'
-
-  resources :search do
-    get :autocomplete_school_name, :on => :collection
-  end
-
-
 
 
   post '/searches/create' => 'searches#create'

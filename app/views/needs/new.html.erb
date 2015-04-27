@@ -11,6 +11,7 @@
     <%= fields_for @student_need do |n| %>
       <%= n.file_field :proof %>
       <%end%>
+    <%= f.select :category, options_for_select(@need_category), {include_blank: true} %><br />
     <%= hidden_field_tag 'user_id', current_user.id %>
     <%= f.submit %>
   <% end %>
