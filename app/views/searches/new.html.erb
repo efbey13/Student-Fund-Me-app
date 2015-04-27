@@ -20,11 +20,7 @@
   <%= f.select :gender, options_for_select(@gender) %><br>
 
   <%= f.label :race, "Race" %>
-
-
   <%= f.select :race, options_for_select(@race), {include_blank: true} %><br>
-
-
 
   <%= f.label :location, "Location" %>
   <%= f.text_field :location, placeholder: "Bronx, NY", id: "autocompleteloc" %><br>
@@ -45,3 +41,8 @@
     source: <%= raw User.uniq.pluck(:location) %>
   });
 </script>
+<<<<<<< HEAD
+
+
+=======
+>>>>>>> 80ab2db944848ebefcd569d8605788f022f8a9af

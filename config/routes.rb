@@ -32,6 +32,11 @@ Rails.application.routes.draw do
     resources :challenges
   end
 
+  resources :search do
+    get :autocomplete_school_name, :on => :collection
+  end
+
+
 
 
   post 'users/:id/challenges/new' => 'users#index'
