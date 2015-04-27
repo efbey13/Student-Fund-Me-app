@@ -14,13 +14,15 @@
   <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete" %><br>
 
   <%= f.label :major, "Major" %>
-  <%= f.select :major, options_for_select(@major) %><br>
+  <%= f.select :major, options_for_select(@major), {include_blank: true} %><br>
 
   <%= f.label :gender, "Gender" %>
   <%= f.select :gender, options_for_select(@gender) %><br>
 
   <%= f.label :race, "Race" %>
-  <%= f.select :race, %w[white black asian indian hispanic], {include_blank: true} %><br>
+
+
+  <%= f.select :race, options_for_select(@race), {include_blank: true} %><br>
 
 
   <%= f.label :location, "Location" %>

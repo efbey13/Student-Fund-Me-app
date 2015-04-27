@@ -32,14 +32,14 @@ Rails.application.routes.draw do
     resources :challenges
   end
 
-
-  post 'users/:id/challenges/new' => 'users#index'
-
   resources :search do
     get :autocomplete_school_name, :on => :collection
   end
 
 
+
+
+  post 'users/:id/challenges/new' => 'users#index'
 
 
   post '/searches/create' => 'searches#create'
@@ -64,6 +64,7 @@ Rails.application.routes.draw do
   get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
 
   post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+
 
   # post '/user/id/challenges' => 'challenges#new'
   # should this route ^^^ take you to the view that confirms that the student need has been met

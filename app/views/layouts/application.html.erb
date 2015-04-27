@@ -4,21 +4,75 @@
   <title>HandUp</title>
   <meta charset="utf-8">
   <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
-
   <%= stylesheet_link_tag 'application', media: 'all' %>
   <%= javascript_include_tag 'https://js.stripe.com/v1/', :defaults %>
-
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">  
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-
+  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   <%= csrf_meta_tags %>
   <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
   <%= analytics_init if Rails.env.production? %>
 </head>
-
 <body>
-<%= yield %>
+<% if current_user == nil %>
+    <div id="wrap">
+      <div id="header-wrap">
+        <header id="nav">
+          <a class="button-signup">Create Account</a>
+          <a class="nav-buttons">Find A Student</a>
+          <a class="nav-buttons">Sponsor A Student</a>
+          <a class="nav-buttons">Lend A Hand</a>
+          <b><a class="button-login" href="/auth/linkedin">log in<a></b>
+          <!-- <b><a class="button-login" href="/signout">log out<a></b> -->
+
+        </header>
+      </div>
+
+      <main id="content">
+
+        <!-- \\\\\\\\\\\ [ SLIDE SHOW START ] /////////// -->
+        <div id="myCarousel" class="carousel slide">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        <!-- Carousel items -->
+        <div class="carousel-inner">
+          <div class="active item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
+          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
+          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover"></div>
+          <!-- <div class="item" style="background:url(''); background-size:cover"></div> -->
+        </div>
+        <!-- Carousel nav -->
+        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
+          <div class="box">  </div>
+        </a>
+        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
+       </div>
+       <!-- \\\\\\\\\\\ [ SLIDE SHOW END ] /////////// -->
+      </main>
+    </div>
+<% else %>
+<div id="wrap">
+  <div id="header-wrap">
+    <header id="nav">
+      <a class="button-signup">Create Account</a>
+      <a class="nav-buttons">Find A Student</a>
+      <a class="nav-buttons">Sponsor A Student</a>
+      <a class="nav-buttons">Lend A Hand</a>
+      <!-- <b><a class="button-login" href="/auth/linkedin">log in<a></b> -->
+      <b><a class="button-login" href="/signout">log out<a></b>
+
+    </header>
+  </div>
+
+  <main id="content">
+    <%= yield %>
+  </main>
+</div>
+
+<% end %>
 </body>
 
 </html>

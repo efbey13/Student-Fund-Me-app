@@ -2,8 +2,8 @@
 
 <%= form_tag("/sponsor_needs/back_need") do %>
 <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
-          data-description="A month's subscription"
+          data-key="<%= ENV['stripe_test_publishable'] %>"
+          data-description="<%= @student_need.need.title %>"
           data-amount="500"></script>
 <%= hidden_field :student_need_id, value: @student_need.id %>
 <%= text_field_tag (:amount) %>

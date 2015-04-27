@@ -26,6 +26,7 @@ class NeedsController < ApplicationController
     @need = Need.new
     @user = User.find(params[:user_id])
     @student_need = @user.student_needs.build
+    @need_category = %w[books tolietries supplies food tuition dorm health]
   end
 
   private
