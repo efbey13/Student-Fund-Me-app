@@ -1,19 +1,36 @@
-<div id="user-wrap">
-  <nav id="user-nav">
-    <div class="user-nav-inner-wrap">
-      <%= image_tag("handup-logo.png", size:'90x45')%>
-      <!-- <div class="user-nav-mini">
-        <div class="user-nav-mini-inner-wrap">
 
-        </div>
-      </div> -->
+
+<main id="content">
+ <div id="wrap">
+  <nav id="links">
+    <ul class="link">
+    <a href=""><li class="app-title">-</li></a>
+    <a href=""><li class="link">Challenges</li></a>
+    <a href=""><li class="link">Sponsors</li></a>
+    <a href=""><li class="link">Balance</li></a>
+    <a href=""><li class="link">Goals</li></a>
+    </ul>
+    <div class="mini-profile">
+    <ul class="mini-profile"
+    <a><li class="mini-profile-pic"><%= image_tag('mubiyna-casey.jpg', size:'40x40')%> Hi, Mubiyna</li></a>
+    <a><li class="notifications">M</li></a>
+    </ul>
     </div>
   </nav>
 
-  <main id="user_content">
-    <div class="user-content-inner-wrap">
-      <div class="profile-photo">
-      </div>
-    </div>
+  <div id="content-wrap">
+  <aside id="user-nav">
+    <ul class="user-nav">
+      <a href=""><li>M Title</li></a>
+      <a href=""><li>M Link 1</li></a>
+      <a href=""><li>M Link 2</li></a>
+      <a href=""><li>M Link 3</li></a>
+      <a href=""><li>M Link 4</li></a>
+    <ul>
+  </aside>
+  <main id="user-content">
+
+        <%= yield %>
   </main>
-</div> <!-- end user-wrap -->
+</div>
+</div>

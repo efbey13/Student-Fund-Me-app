@@ -7,7 +7,6 @@ class ChallengesController < ApplicationController
   end
 
   def new
-
   end
 
   def update
@@ -25,6 +24,7 @@ class ChallengesController < ApplicationController
   end
 
   def show
+    @student_challenge = StudentChallenge.find_by(:id => params[:id])
   end
 
 
