@@ -14,7 +14,7 @@
   <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete" %><br>
 
   <%= f.label :major, "Major" %>
-  <%= f.select :major, options_for_select(@major) %><br>
+  <%= f.select :major, options_for_select(@major), {include_blank: true} %><br>
 
   <%= f.label :gender, "Gender" %>
   <%= f.select :gender, options_for_select(@gender) %><br>
@@ -32,17 +32,13 @@
 
 <script>
   $( "#autocomplete" ).autocomplete({
-    source: <%= raw User.uniq.pluck(:school_name) %>
+    source: <%= raw User.uniq.pluck(:school_name).compact %>
   });
 </script>
 
 <script>
   $( "#autocompleteloc" ).autocomplete({
-    source: <%= raw User.uniq.pluck(:location) %>
+    source: <%= raw User.uniq.pluck(:location).compact %>
   });
 </script>
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 80ab2db944848ebefcd569d8605788f022f8a9af

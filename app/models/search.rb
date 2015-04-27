@@ -16,9 +16,4 @@ class Search < ActiveRecord::Base
     return non_sponsored_student
   end
 
-  def leah
-    leahs = User.uniq.pluck(:school_name)
-    return leahs
-  end
-
 end
