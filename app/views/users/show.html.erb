@@ -31,14 +31,21 @@
         <%end%>
 <% end %>
 
-        <!-- SEARCH LINK FOR A USER ||||||||||||||||||||||||||| -->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||
+          SEARCH LINK FOR A USER
+|||||||||||||||||||||||||||||||||||||||||||||||||||| -->
+<% if current_user.status == 'sponsor' %>
         <% if @user.id != current_user.id && current_user.status == 'sponsor' %>
         <% else %>
         <h3><%= link_to "I need a student to sponsor", new_search_path %></h3>
 
         <% end %>
+<% end %>
 
-        <!-- FOLLOW A USER ||||||||||||||||||||||||||| -->
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||
+              FOLLOW A USER
+|||||||||||||||||||||||||||||||||||||||||||||||||| -->
 <% if current_user.status == "sponsor" && current_user.id != @user.id %>
         <%= form_tag(:action => 'follow') do %>
         <table>
@@ -53,21 +60,66 @@
         </table>
         <% end %>
 <% end %>
+
+
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||
+  CURRENRT USER PROFILE VIEW OF THEIR FOLLOWERS/FOLLOWING
+||||||||||||||||||||||||||||||||||||||||||||||||-->
+<% if current_user.status == 'sponsor' %>
       <h1>Following</h1>
-      <% @sponsored_students.each do |student| %>
+        <% @sponsored_students.each do |student| %>
+            <%= form_tag do %>
+            <%= link_to label_tag student.student.first_name %>
+            <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })%>
+            <%= submit_tag('challenge') %>
+          <% end %><br/>
+        <% end %>
+<% elsif current_user.status == 'student' %>
+        <h1>Followers</h1>
+          <% current_user.sponsors.each do |sponsor| %>
+            <%= sponsor.first_name %>
+          <% end %>
+<% end %>
 
-          <%=link_to student.student.first_name, user_path(student) %> <br/>
-      <% end %>
-
-      <!-- USER CHALLENGE ||||||||||-->
+<!-- ||||||||||||||||||||||||||||||||||||||||||||||||
+                  USER CHALLENGE
+||||||||||||||||||||||||||||||||||||||||||||||||||-->
+<% if current_user.status == 'sponsor' %>
       <h1>Challenges</h1>
-      <!-- <% current_user.challenged_students.each do |row| %>
-        <%= row.inspect%>
-        <%= Challenge.find_by(:id => row.challenge_id).name %> -->
+      <% current_user.challenged_students.each do |row| %>
+        <%= row %>
+        <%= Challenge.find_by(:id => row.challenge_id).name %>
 
-        <!-- <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
+        <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
         <%= User.find_by(:id => row.student_id).first_name%>
-        <% end %> -->
+        <% end %>
 
-<!--
-      <% end %> -->
+        <br>
+      <% end %>
+<% elsif current_user.status == 'student' %>
+      <h1>Challenges</h1>
+      <% current_user.student_challenges.each do |row|%>
+          <% challenge = Challenge.find_by(:id => row.challenge_id) %>
+
+
+
+        <%= form_tag do %>
+          <a><h4><%= challenge.name %></a> from Sponsor:
+          <%= User.find_by(:id => row.sponsor_id).first_name %>
+          <%= hidden_field_tag(row.id)%>
+          <%= check_box_tag 'accept'%>
+          <%= submit_tag('Accept Challenge') %>
+        <% end %></h4>
+
+
+
+
+
+      <% end %>
+      <h1>Challenges Accepted</h1>
+      <% current_user.student_challenges.each do |row|%>
+          <%if row.accepted == true %>
+          <%= row.inspect %>
+          <% end %>
+      <% end %>
+<% end %>

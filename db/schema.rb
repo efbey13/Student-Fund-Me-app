@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150427124706) do
 
+
+
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -28,7 +31,6 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "sponsor_id"
   end
 
   create_table "identities", force: :cascade do |t|
@@ -100,6 +102,7 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.integer  "student_id"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+    t.boolean  "accepted"
   end
 
   create_table "student_needs", force: :cascade do |t|
@@ -139,10 +142,12 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.float    "total_given"
     t.string   "bio"
     t.boolean  "discoverable"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
     t.string   "provider"
     t.string   "uid"
+    t.date     "spring_semester"
+    t.date     "fall_semester"
   end
 
   add_foreign_key "identities", "users"
