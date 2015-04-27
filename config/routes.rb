@@ -31,7 +31,7 @@ Rails.application.routes.draw do
     resources :achievements
     resources :challenges
   end
-
+  resources :challenges, :only => [:new]
   resources :search do
     get :autocomplete_school_name, :on => :collection
   end
@@ -60,12 +60,12 @@ Rails.application.routes.draw do
   post '/student_sponsors/create' => 'student_sponsors#create'
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
-
   get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
-
   post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
 
 
+  post '/users/:id/challenges/:id/edit' => 'challenges#edit', as: "user_student_challenge"
+  post 'challenges/new' => 'challenges#create_challenge'
   # post '/user/id/challenges' => 'challenges#new'
   # should this route ^^^ take you to the view that confirms that the student need has been met
   # Or is it refering to the view where the form where sponsors can back the need/donate?

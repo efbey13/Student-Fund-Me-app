@@ -6,7 +6,8 @@
 
     <%= form_tag do |f| %>
     <%= label_tag :name %>
-    <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })
-%>
+    <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] }) %>
+    <br>
+
     <%= submit_tag('create challenge') %>
   <% end %>

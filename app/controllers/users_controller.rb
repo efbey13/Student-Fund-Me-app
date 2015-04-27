@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def edit
-    binding.pry
+    binding.pr
   end
 
   def delete
