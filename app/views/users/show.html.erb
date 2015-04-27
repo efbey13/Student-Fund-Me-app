@@ -55,8 +55,8 @@
 <% end %>
       <h1>Following</h1>
       <% @sponsored_students.each do |student| %>
-        
-          <%= student.student.first_name %> <br/>
+
+          <%=link_to student.student.first_name, user_path(student) %> <br/>
       <% end %>
 
       <!-- USER CHALLENGE ||||||||||-->
