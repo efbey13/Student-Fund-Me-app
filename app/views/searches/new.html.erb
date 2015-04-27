@@ -21,7 +21,7 @@
 
   <%= f.label :race, "Race" %>
   <%= f.select :race, %w[white black asian indian hispanic], {include_blank: true} %><br>
-  
+
 
   <%= f.label :location, "Location" %>
   <%= f.text_field :location, placeholder: "Bronx, NY", id: "autocompleteloc" %><br>
@@ -33,14 +33,12 @@
 
 <script>
   $( "#autocomplete" ).autocomplete({
-    source: <%= raw User.uniq.pluck(:school_name) %>
+    source: <%= raw User.uniq.pluck(:school_name).compact %>
   });
 </script>
 
 <script>
   $( "#autocompleteloc" ).autocomplete({
-    source: <%= raw User.uniq.pluck(:location) %>
+    source: <%= raw User.uniq.pluck(:location).compact %>
   });
 </script>
-
-
