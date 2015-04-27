@@ -1,7 +1,7 @@
 
 
 
-<% if !!current_user.identity %>
+<% if current_user.identity.nil? %>
   <a href="/auth/venmo">Link Your Venmo</a>
 <%end%>
 
@@ -52,8 +52,22 @@
           </tr>
         </table>
         <% end %>
+<% end %>
       <h1>Following</h1>
       <% @sponsored_students.each do |student| %>
-          <%= student.student.first_name %> <br/>
+
+          <%=link_to student.student.first_name, user_path(student) %> <br/>
       <% end %>
-<% end %>
+
+      <!-- USER CHALLENGE ||||||||||-->
+      <h1>Challenges</h1>
+      <!-- <% current_user.challenged_students.each do |row| %>
+        <%= row.inspect%>
+        <%= Challenge.find_by(:id => row.challenge_id).name %> -->
+
+        <!-- <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
+        <%= User.find_by(:id => row.student_id).first_name%>
+        <% end %> -->
+
+<!--
+      <% end %> -->
