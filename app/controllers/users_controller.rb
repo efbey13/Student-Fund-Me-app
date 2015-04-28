@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def edit
-    binding.pry
+    binding.pr
   end
 
   def delete
@@ -13,10 +13,10 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     # binding.pry
-    spring = Date.new(params[:user]['spring_semester(1i)'].to_i,params[:user]['spring_semester(2i)'].to_i,params[:user]['spring_semester(3i)'].to_i)
-    fall = Date.new(params[:user]['fall_semester(1i)'].to_i,params[:user]['fall_semester(2i)'].to_i,params[:user]['fall_semester(3i)'].to_i)
-    @user.spring_semester = spring
-    @user.fall_semester = fall
+    # spring = Date.new(params[:user]['spring_semester(1i)'].to_i,params[:user]['spring_semester(2i)'].to_i,params[:user]['spring_semester(3i)'].to_i)
+    # fall = Date.new(params[:user]['fall_semester(1i)'].to_i,params[:user]['fall_semester(2i)'].to_i,params[:user]['fall_semester(3i)'].to_i)
+    # @user.spring_semester = spring
+    # @user.fall_semester = fall
     if @user.update(student_params)
       redirect_to user_path(@user)
     else
@@ -27,7 +27,13 @@ class UsersController < ApplicationController
   def show
     @user  = User.find(params[:id])
     @sponsored_students = @user.sponsored_students
-    # binding.pry
+    @sponsored_students = current_user.sponsored_students
+    @student_sponsors = current_user.student_sponsors
+    if current_user.status == 'sponsor'
+      @set_challenges = current_user.challenged_students
+    elsif current_user.status ==
+       @challenges = current_user.student_challenges
+    end
   end
 
   def student_show

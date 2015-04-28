@@ -2,10 +2,10 @@
 
 <%= form_for @search do |f| %>
   <%= f.label :first_name, "First Name" %>
-  <%= f.text_field :first_name %><br>
+  <%= f.text_field :first_name, placeholder: "Mary" %><br>
 
   <%= f.label :last_name, "Last Name" %>
-  <%= f.text_field :last_name %><br>
+  <%= f.text_field :last_name, placeholder: "Smith" %><br>
 
   <%= f.label :email, "Student Email" %>
   <%= f.email_field :email, placeholder: "student@nyu.edu" %><br>
@@ -14,13 +14,13 @@
   <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete" %><br>
 
   <%= f.label :major, "Major" %>
-  <%= f.select :major, options_for_select(@major), {include_blank: true} %><br>
+  <%= f.select :major, options_for_select(@major), {prompt: 'Select'} %><br>
 
   <%= f.label :gender, "Gender" %>
-  <%= f.select :gender, options_for_select(@gender) %><br>
+  <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} %><br>
 
   <%= f.label :race, "Race" %>
-  <%= f.select :race, options_for_select(@race), {include_blank: true} %><br>
+  <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
 
   <%= f.label :location, "Location" %>
   <%= f.text_field :location, placeholder: "Bronx, NY", id: "autocompleteloc" %><br>
@@ -41,4 +41,3 @@
     source: <%= raw User.uniq.pluck(:location).compact %>
   });
 </script>
-

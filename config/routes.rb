@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -31,7 +33,7 @@ Rails.application.routes.draw do
     resources :achievements
     resources :challenges
   end
-
+  resources :challenges, :only => [:new, :show]
   resources :search do
     get :autocomplete_school_name, :on => :collection
   end
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
 
 
 
-  post 'users/:id/challenges/new' => 'users#index'
+  post '/users/:id/challenges/new' => 'users#index'
 
 
   post '/searches/create' => 'searches#create'
@@ -54,12 +56,13 @@ Rails.application.routes.draw do
   patch '/users/:id/status' => 'users#status_selected', as: 'status_selected'
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
-  get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
+  # get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
 
   post '/users/:id' => 'users#follow', as: 'user_followed'
   post '/student_sponsors/create' => 'student_sponsors#create'
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
+<<<<<<< HEAD
 
   get '/student_needs/:id/select_amount' => 'student_needs#select_amount', as: 'select_amount'
 
@@ -69,6 +72,16 @@ Rails.application.routes.draw do
   get '/users/:id/student_show' => 'users#student_show', as: 'student_show'
   get '/sponsor_needs/:id/make_payment' => 'sponsor_needs#make_payment', as: 'make_payment'
 
+  get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
+  post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+  get '/student_needs/:id/edit' => 'student_needs#edit', as: "edit_student_need"
+
+
+  patch 'challenges/:id' => 'challenges#update', as: "student_challenge"
+
+
+  post 'challenges/new' => 'challenges#create'
+  # post 'challenges/:id' => 'challenges#update'
   # post '/user/id/challenges' => 'challenges#new'
   # should this route ^^^ take you to the view that confirms that the student need has been met
   # Or is it refering to the view where the form where sponsors can back the need/donate?
