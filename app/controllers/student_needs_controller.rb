@@ -10,6 +10,7 @@ class StudentNeedsController < ApplicationController
 
   def create
     @student_need = StudentNeed.new(student_needs_params)
+    binding.pry
     if @student_need.save
       redirect_to user_path(@student_need.student)
     end
