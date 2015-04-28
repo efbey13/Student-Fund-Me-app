@@ -13,10 +13,10 @@ class UsersController < ApplicationController
 
     @user = User.find(params[:id])
     # binding.pry
-    spring = Date.new(params[:user]['spring_semester(1i)'].to_i,params[:user]['spring_semester(2i)'].to_i,params[:user]['spring_semester(3i)'].to_i)
-    fall = Date.new(params[:user]['fall_semester(1i)'].to_i,params[:user]['fall_semester(2i)'].to_i,params[:user]['fall_semester(3i)'].to_i)
-    @user.spring_semester = spring
-    @user.fall_semester = fall
+    # spring = Date.new(params[:user]['spring_semester(1i)'].to_i,params[:user]['spring_semester(2i)'].to_i,params[:user]['spring_semester(3i)'].to_i)
+    # fall = Date.new(params[:user]['fall_semester(1i)'].to_i,params[:user]['fall_semester(2i)'].to_i,params[:user]['fall_semester(3i)'].to_i)
+    # @user.spring_semester = spring
+    # @user.fall_semester = fall
     if @user.update(student_params)
       redirect_to user_path(@user)
     else
