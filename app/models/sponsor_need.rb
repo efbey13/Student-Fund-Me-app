@@ -1,5 +1,5 @@
 class SponsorNeed < ActiveRecord::Base
   belongs_to :sponsor
-  belongs_to :need
+  belongs_to :student_need
 
 end

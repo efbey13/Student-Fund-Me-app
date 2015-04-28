@@ -41,11 +41,25 @@ Rails.application.routes.draw do
   post '/users/:id' => 'users#follow', as: 'user_followed'
   post '/student_sponsors/create' => 'student_sponsors#create'
 
+
+
+
+
+
+  get '/student_needs/:id/select_amount' => 'student_needs#select_amount', as: 'select_amount'
+
+  post '/sponsor_needs/save_amount' => 'sponsor_needs#save_amount', as: "save_amount"
+
+  get '/users/:id/student_show' => 'users#student_show', as: 'student_show'
+  get '/sponsor_needs/:id/make_payment' => 'sponsor_needs#make_payment', as: 'make_payment'
+
+
   get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
-  post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+  post '/sponsor_needs/:id/back_need' => 'sponsor_needs#back_need', as: "need_backed"
   get '/student_needs/:id/edit' => 'student_needs#edit', as: "edit_student_need"
 
   patch 'challenges/:id' => 'challenges#update', as: "student_challenge"
+
 
   post 'challenges/new' => 'challenges#create'
 

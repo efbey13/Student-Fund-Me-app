@@ -1,11 +1,10 @@
 class Payments
 
-  def self.donate_to_need(amount, currency = 'usd', source)
+  def self.donate_to_need(amount, currency = 'usd', stripe_token)
     Stripe::Charge.create(
     amount: amount,
     currency: currency,
-    description: description,
-    source: source
+    source: stripe_token
     )
   end
 
