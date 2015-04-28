@@ -11,9 +11,9 @@
 
 
 
-        <% if current_user.identity.nil? %>
+  <!--       <% if current_user.identity.nil? %>
           <a href="/auth/venmo">Link Your Venmo</a>
-        <%end%>
+        <%end%> -->
         <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
 <% if @user.status == "student" && current_user.id != @user.id %>
         <p><%= @user.race %></p>
@@ -39,7 +39,7 @@
 <% if current_user.status == 'sponsor' %>
         <% if @user.id != current_user.id && current_user.status == 'sponsor' %>
         <% else %>
-        <h3><%= link_to "I need a student to sponsor", new_search_path %></h3>
+        <h4><%= link_to "Find Student to Sponsor", new_search_path %></h4>
 
         <% end %>
 <% end %>

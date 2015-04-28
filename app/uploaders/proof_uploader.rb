@@ -3,7 +3,7 @@
 class ProofUploader < CarrierWave::Uploader::Base
 
   # Include RMagick or MiniMagick support:
-  # include CarrierWave::RMagick
+  include CarrierWave::RMagick
   # include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
@@ -25,10 +25,10 @@ class ProofUploader < CarrierWave::Uploader::Base
   # end
 
   # Process files as they are uploaded:
-  # process :scale => [200, 300]
+  process :resize_to_fit => [400, 600]
   #
   # def scale(width, height)
-  #   # do something
+  #   :resize_to_fit => [width, height]
   # end
 
   # Create different versions of your uploaded files:
