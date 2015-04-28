@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
   def edit
-    binding.pry
+    binding.pr
   end
 
   def delete
@@ -26,10 +26,13 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
-    @sponsored_students = @user.sponsored_students
-    # binding.pry
-
-
+    @sponsored_students = current_user.sponsored_students
+    @student_sponsors = current_user.student_sponsors
+    if current_user.status == 'sponsor'
+      @set_challenges = current_user.challenged_students
+    elsif current_user.status ==
+       @challenges = current_user.student_challenges
+    end
   end
 
   def status
