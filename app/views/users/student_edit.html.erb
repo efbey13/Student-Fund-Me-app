@@ -15,15 +15,7 @@
 <%= f.label :bio, "Biography" %>
 <%= f.text_area(:bio, cols: 20, rows: 5) %><br>
 
-<h3>Academic Calender</h3>
 
-<%= f.label :spring_semester, "Spring Semester"%>
-<%= f.date_select :spring_semester, :minute_step => false %>
-<br>
-<%= f.label :fall_semester, "Fall Semester"%>
-<%= f.date_select :fall_semester, :minute_step => false %>
-
-<br>
 
 <%= f.submit 'Join Us'%>
 <% end %>
