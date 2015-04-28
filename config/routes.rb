@@ -61,10 +61,13 @@ Rails.application.routes.draw do
 
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
 
-  get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
+  get '/student_needs/:id/select_amount' => 'student_needs#select_amount', as: 'select_amount'
 
-  post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+  post '/sponsor_needs/:id/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+  post '/sponsor_needs/save_amount' => 'sponsor_needs#save_amount', as: "save_amount"
 
+  get '/users/:id/student_show' => 'users#student_show', as: 'student_show'
+  get '/sponsor_needs/:id/make_payment' => 'sponsor_needs#make_payment', as: 'make_payment'
 
   # post '/user/id/challenges' => 'challenges#new'
   # should this route ^^^ take you to the view that confirms that the student need has been met

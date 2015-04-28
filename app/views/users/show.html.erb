@@ -69,7 +69,7 @@
       <h1>Following</h1>
         <% @sponsored_students.each do |student| %>
             <%= form_tag do %>
-            <%= link_to label_tag student.student.first_name %>
+            <%= link_to student.student.first_name, student_show_path(student.student)%>
             <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })%>
             <%= submit_tag('challenge') %>
           <% end %><br/>
@@ -93,7 +93,6 @@
         <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
         <%= User.find_by(:id => row.student_id).first_name%>
         <% end %>
-
         <br>
       <% end %>
 <% elsif current_user.status == 'student' %>

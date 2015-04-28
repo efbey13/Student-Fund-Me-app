@@ -1,0 +1,30 @@
+<h1><%= @student_need.need.title %></h1>
+
+<%= form_tag("/sponsor_needs/save_amount", class: "form-inline") do %>
+  <%= hidden_field_tag :student_need_id, @student_need.id %>
+
+  <div class="form-group">
+    <div class="input-group">
+      <div class="input-group-addon">$</div>
+      <%= text_field_tag :amount_given, nil, placeholder: "50", class: "form-control" %>
+      <div class="input-group-addon">.00</div>
+    </div>
+  </div>
+ <%= submit_tag "Submit amount" %>
+<% end %>
+
+<!-- <script type="text/javascript">
+  var amount;
+  $("#amount").on("input", function() {
+    var inputAmount = $("#amount").val();
+    var amount = inputAmount * 100;
+  });
+</script> -->
+
+
+<!-- <script src="https://checkout.stripe.com/checkout.js"
+  class="stripe-button"
+  data-key="<%= ENV['stripe_test_publishable'] %>"
+  data-description="<%= @student_need.need.title %>"
+  data-amount="5000" id="temp">
+</script> -->

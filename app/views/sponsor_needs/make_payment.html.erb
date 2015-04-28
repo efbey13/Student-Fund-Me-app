@@ -1,0 +1,8 @@
+<%= form_tag "/sponsor_needs/#{@sponsor_need.id}/back_need", method: 'post' %>
+<script src="https://checkout.stripe.com/checkout.js"
+  class="stripe-button"
+  data-key="<%= ENV['stripe_test_publishable'] %>"
+  data-description="<%= @sponsor_need.student_need.need.title %>"
+  data-amount="<%= @sponsor_need.amount_given * 100 %>">
+</script>
+<%= submit_tag %>

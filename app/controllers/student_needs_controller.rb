@@ -3,7 +3,7 @@ class StudentNeedsController < ApplicationController
     @student_need = StudentNeed.find(params[:id])
   end
 
-  def back_need
+  def select_amount
     @student_need = StudentNeed.find(params[:id])
   end
 end

@@ -11,10 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150427124706) do
-
-
-
+ActiveRecord::Schema.define(version: 20150427192413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +34,8 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string   "provider"
     t.string   "uid"
+    t.string   "provider"
   end
 
   add_index "identities", ["user_id"], name: "index_identities_on_user_id", using: :btree
@@ -51,13 +48,6 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.datetime "updated_at", null: false
     t.integer  "exspense"
     t.string   "category"
-  end
-
-  create_table "search_suggestions", force: :cascade do |t|
-    t.string   "term"
-    t.integer  "popularity"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "searches", force: :cascade do |t|
@@ -86,6 +76,7 @@ ActiveRecord::Schema.define(version: 20150427124706) do
     t.datetime "updated_at",      null: false
     t.integer  "student_need_id"
     t.string   "charge"
+    t.integer  "sponsor_id"
   end
 
   create_table "student_achievements", force: :cascade do |t|
