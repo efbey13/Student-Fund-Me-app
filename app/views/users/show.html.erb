@@ -2,6 +2,7 @@
 
 
 
+
         <% if current_user.id == @user.id%>
         <h1 class="welcome">Welcome, <%= @user.first_name %> </h1>
         <% else %>
@@ -20,15 +21,16 @@
 <% end %>
         <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
 <% if current_user.status == 'student' %>
-        <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
-        <!-- List Needs -->
-        <h1>Needs</h1>
-        <% current_user.student_needs.each do |student_need| %>
-        <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
-            Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
-            End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
-        </p>
-        <%end%>
+      <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
+      <!-- List Needs -->
+      <h1>Needs</h1>
+      <% current_user.student_needs.each do |student_need| %>
+      <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
+          Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
+          End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
+      </p>
+        <%= link_to 'Edit your need', edit_student_need_path(student_need) %><br/>
+      <%end%>
 <% end %>
 
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||

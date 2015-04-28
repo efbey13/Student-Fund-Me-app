@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+  # @need_category = ["Textbooks", "Tolietries", "Supplies", "Meal Plan", "Tuition", "Dormitory", "Health Plan"]
+    need_categories = Need.create(["Textbooks", "Tolietries", "Supplies", "Meal Plan", "Tuition", "Dormitory", "Health Plan"])
+  
