@@ -24,14 +24,12 @@ class ApplicationController < ActionController::Base
     if current_user == nil
       'application'
     else
-       if current_user.present?
-         'application'
          if current_user.status == 'sponsor'
            "sponsor_profile"
          elsif current_user.status == 'student'
            "student_profile"
          end
-       end
     end
+
   end
 end
