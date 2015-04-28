@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'sessions/destroy'
 
+
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
@@ -39,7 +41,7 @@ Rails.application.routes.draw do
 
 
 
-  post 'users/:id/challenges/new' => 'users#index'
+  post '/users/:id/challenges/new' => 'users#index'
 
 
   post '/searches/create' => 'searches#create'
@@ -62,6 +64,7 @@ Rails.application.routes.draw do
   get '/student_needs/:id' => 'student_needs#show', as: 'student_need'
   get '/student_needs/:id/back_need' => 'student_needs#back_need', as: 'back_need'
   post '/sponsor_needs/back_need' => 'sponsor_needs#back_need', as: "need_backed"
+  get '/student_needs/:id/edit' => 'student_needs#edit', as: "edit_student_need"
 
 
   patch 'challenges/:id' => 'challenges#update', as: "student_challenge"
