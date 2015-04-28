@@ -1,17 +1,17 @@
 
 
 
-<% if current_user.identity.nil? %>
-  <a href="/auth/venmo">Link Your Venmo</a>
-<%end%>
-
-
-
 
         <% if current_user.id == @user.id%>
-        <h1>Welcome, <%= @user.first_name %> </h1>
+        <h1 class="welcome">Welcome, <%= @user.first_name %> </h1>
         <% else %>
         <h1><%= @user.first_name %></h1>
+        <%end%>
+
+
+
+        <% if current_user.identity.nil? %>
+          <a href="/auth/venmo">Link Your Venmo</a>
         <%end%>
         <!-- VIEW FOR NON CURRENT USER  ||||||||||||||||||||||||||| -->
 <% if @user.status == "student" && current_user.id != @user.id %>

@@ -1,0 +1,123 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree ../../../vendor/assets/stylesheets/.
+ *= require_tree .
+ *= require_self
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.eot"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.woff"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.ttf"
+ //= depend_on_asset "bootstrap/glyphicons-halflings-regular.svg"
+ */
+@import "bootstrap";
+/* Some Style from the Bootstrap Default Theme */
+/* line 25, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+a {color: #101010;}
+  a:link {
+  color: #101010;
+  text-decoration: none;}
+  a:visited {
+  color: #101010;
+  text-decoration: none;}
+  a:hover {
+  color: #101010;
+  text-decoration: none;
+  }
+  a:active {
+  color: #101010;
+  text-decoration: none;}
+li {list-style:none;}
+ul {padding:0;margin:0;}
+body{padding:0;margin:0;background:#EBEBE8;}
+#wrap{
+  padding:0;
+  margin:0;
+  width:100vw;
+  height:93.5vh;
+  background:#f6f5fa;
+  // border:1px solid green;
+  // overflow:auto;
+}
+header#head {
+  width:100vw;
+  height:50px;
+  background:#fff;//#FCF4FF;//gradient from white to #e9e9ee
+  border-bottom:1px solid #e9e9ee;
+  overflow:auto;
+  }
+  .app-logo {
+    width:240px;
+    height:50px;
+    border-right:1px solid #eee;
+    background:#fff;
+    text-align:center;
+    display:inline-block;
+    float:left;
+  }
+  ul.head-links {
+    // border:1px solid red;
+    height:50px;
+    float:left;
+  }
+  ul.head-links li {
+    display:inline-block;
+    line-height:50px;
+    font-size:16px;
+    border-right:1px solid #eee;}
+  ul.head-links li span {margin:0 20px;}
+  .mini-user {
+    width:240px;
+    height:90px;
+    // background:#048A81;
+    }
+    a.user-mini-photo {
+    line-height:90px;
+    margin:0 20px;
+    }a.user-mini-photo img  {border-radius:25px;}
+     a.user-name {font-size:12px;color:#fff;line-height:90px;}
+
+aside#sidebar {
+  width:240px;
+  height:93.5vh;
+  float:left;
+  background:#00161C;//#242424;
+  display:inline-block;
+  // border:1px solid red;
+  }
+  ul.sidebar {
+  margin-top:20px;
+  // background:#273135;// lighter bluish gray #3B4648;
+  }
+  li.sidebar-links {
+    width:240px;
+    height:45px;
+    line-height:45px;
+    color:#888;
+    border-bottom:1px solid #3b4648;
+  }
+  li.sidebar-links span {margin:0 20px;color:#888;}
+  li.sidebar-links {font-size:14px;}
+
+main#content {
+  margin:20px;
+  width:80vw;
+  height:88vh;
+  position:absolute;
+  // background:;
+  // margin-left:200px;
+  float:left;
+  display:inline-block;
+  // border:1px solid blue;
+}
+#content-inner-wrap {
+  // margin:40px;
+}

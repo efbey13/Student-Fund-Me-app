@@ -54,7 +54,7 @@ Rails.application.routes.draw do
   patch '/users/:id/status' => 'users#status_selected', as: 'status_selected'
 
   get '/users/:id/student_edit' => 'users#student_edit', as: 'student_edit'
-  get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
+  # get '/users/:id/user_profile' => 'users#user_profile', as: 'user_profile'
 
   post '/users/:id' => 'users#follow', as: 'user_followed'
   post '/student_sponsors/create' => 'student_sponsors#create'
