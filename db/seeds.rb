@@ -3,5 +3,16 @@
 #
 # Examples:
 #
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+#   cities = City.create([{ name: 'Chicago' }},
+
+Need.create(
+  [
+    {:title => "Textbooks"},
+    {:title => "Tolietries"},
+    {:title => "Supplies"},
+    {:title => "Meal Plan"},
+    {:title => "Tuition"},
+    {:title => "Dormitory"},
+    {:title => "Health Plan"}
+  ]
+)

@@ -75,6 +75,7 @@ ActiveRecord::Schema.define(version: 20150428135053) do
     t.datetime "updated_at",      null: false
     t.integer  "student_need_id"
     t.string   "charge"
+    t.integer  "sponsor_id"
   end
 
   create_table "student_achievements", force: :cascade do |t|

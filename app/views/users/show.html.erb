@@ -2,6 +2,7 @@
 
 
 
+
         <% if current_user.id == @user.id%>
         <h1 class="welcome">Welcome, <%= @user.first_name %> </h1>
         <% else %>
@@ -20,15 +21,16 @@
 <% end %>
         <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
 <% if current_user.status == 'student' %>
-        <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
-        <!-- List Needs -->
-        <h1>Needs</h1>
-        <% current_user.student_needs.each do |student_need| %>
-        <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
-            Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
-            End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
-        </p>
-        <%end%>
+      <p> <%= link_to "Create a Need", new_student_need_path %></p>
+      <!-- List Needs -->
+      <h1>Needs</h1>
+      <% current_user.student_needs.each do |student_need| %>
+      <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
+          Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
+          End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
+      </p>
+        <%= link_to 'Edit your need', edit_student_need_path(student_need) %><br/>
+      <%end%>
 <% end %>
 
 <!-- ||||||||||||||||||||||||||||||||||||||||||||||||
@@ -67,6 +69,18 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||-->
 <% if current_user.status == 'sponsor' && current_user.id == @user.id %>
       <h1>Following</h1>
+        <% @sponsored_students.each do |student| %>
+            <%= form_tag do %>
+            <%= link_to student.student.first_name, student_show_path(student.student)%>
+            <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })%>
+            <%= submit_tag('challenge') %>
+          <% end %><br/>
+        <% end %>
+<% elsif current_user.status == 'student' %>
+        <h1>Followers</h1>
+          <% current_user.sponsors.each do |sponsor| %>
+            <%= sponsor.first_name %>
+          <% end %>
       <% @sponsored_students.each do |row|%>
       <%= User.find(row.student_id).first_name%><br>
       <% end %>
@@ -82,6 +96,14 @@
 ||||||||||||||||||||||||||||||||||||||||||||||||||-->
 <% if current_user.status == "sponsor" && current_user.id == @user.id %>
       <h1>Challenges</h1>
+      <% current_user.challenged_students.each do |row| %>
+        <%= row %>
+        <%= Challenge.find_by(:id => row.challenge_id).name %>
+
+        <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
+        <%= User.find_by(:id => row.student_id).first_name%>
+        <% end %>
+        <br>
       <% @set_challenges.each do |challenge| %>
       <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %><br>
       <% end %>

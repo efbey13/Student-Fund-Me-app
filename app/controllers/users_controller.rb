@@ -26,6 +26,7 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
+    @sponsored_students = @user.sponsored_students
     @sponsored_students = current_user.sponsored_students
     @student_sponsors = current_user.student_sponsors
     if current_user.status == 'sponsor'
@@ -33,6 +34,10 @@ class UsersController < ApplicationController
     elsif current_user.status ==
        @challenges = current_user.student_challenges
     end
+  end
+
+  def student_show
+    @student = User.find(params[:id])
   end
 
   def status
@@ -57,7 +62,7 @@ class UsersController < ApplicationController
   def follow
     @user = User.find(params[:id])
     # binding.pry
-    UserMailer.follow_email(current_user,@user).deliver_now
+    # UserMailer.follow_email(current_user,@user).deliver_now
     # binding.pry
     # @user = User.create_and_send_email(student_params[:email])
     StudentSponsor.create(:student_id => params[:id], :sponsor_id => current_user.id)
