@@ -17,45 +17,67 @@
 </head>
 <body>
 <% if current_user == nil %>
-    <div id="wrap">
+
       <div id="header-wrap">
         <header id="nav">
           <a class="button-signup">Create Account</a>
-          <a class="nav-buttons">Find A Student</a>
-          <a class="nav-buttons">Sponsor A Student</a>
-          <a class="nav-buttons">Lend A Hand</a>
+
+          <a class="nav-buttons">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            Search</a>
+          <a class="nav-buttons">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            Sponsors</a>
+          <a class="nav-buttons">
+          <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+            Lend A Hand</a>
           <b><a class="button-login" href="/auth/linkedin">log in<a></b>
           <!-- <b><a class="button-login" href="/signout">log out<a></b> -->
 
         </header>
       </div>
 
-      <main id="app-content">
+    <div id="app-content">
 
-        <!-- \\\\\\\\\\\ [ SLIDE SHOW START ] /////////// -->
-        <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="active item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
-          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
-          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover"></div>
-          <!-- <div class="item" style="background:url(''); background-size:cover"></div> -->
-        </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-          <div class="box">  </div>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-       </div>
-       <!-- \\\\\\\\\\\ [ SLIDE SHOW END ] /////////// -->
-      </main>
+
+
+      <div id="project-carousel-first" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            <li data-to="0" class="active"></li>
+            <li data-to="1"></li>
+            <li data-to="2"></li>
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner">
+            <div class="item active">
+                <div class="inner-item" style="background:url('http://placehold.it/1200x600/333333'); background-size:cover;"></div>
+            </div>
+            <div class="item">
+                <div class="inner-item" style="background:url('http://placehold.it/1200x600/f00f00'); background-size:cover;"></div>
+            </div>
+            <div class="item">
+                <div class="inner-item" style="background:url('http://placehold.it/1200x600/000000'); background-size:cover;"></div>
+            </div>
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="[id*=project-carousel]" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+          </a>
+          <a class="right carousel-control" href="[id*=project-carousel]" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+          </a>
     </div>
+
+
+
+
+    </div><!--app content wrap-->
+
 <% else %>
+      <!-- \\\\\\ SIGUN UP PROCESS VIEW //////// -->
 
 <%= yield %>
 

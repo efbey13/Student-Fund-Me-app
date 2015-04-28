@@ -18,3 +18,6 @@
 //= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
+$('.carousel-indicators li').on('click', function() {
+  $('.carousel').carousel(parseInt(this.getAttribute('data-to')));
+});
