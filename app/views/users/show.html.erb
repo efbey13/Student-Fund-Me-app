@@ -21,7 +21,7 @@
 <% end %>
         <!-- CREATES NEEDS ||||||||||||||||||||||||||| -->
 <% if current_user.status == 'student' %>
-      <p> <%= link_to "Create a Need", new_user_need_path(current_user) %></p>
+      <p> <%= link_to "Create a Need", new_student_need_path %></p>
       <!-- List Needs -->
       <h1>Needs</h1>
       <% current_user.student_needs.each do |student_need| %>
