@@ -4,7 +4,7 @@
   <p>No Student Found</p>
 <% else %>
   <% @search.search_students.each do |student| %>
-  <!-- <h4><= student.profile_photo%></h4> not built out yet #add to search.rb-->
+  <%= image_tag student.profile_photo %>
   <h4><%= student.first_name %></h4>
   <h4><%= student.last_name %></h4>
   <p>Email: <%= student.email %></p>
@@ -14,7 +14,7 @@
   <p>Race: <%= student.race %></p>
   <p>Location: <%= student.location %></p>
   <p>Bio: <%= student.bio %></p>
-  <p><%= link_to 'students profile', user_path(student) %></p>
+  <p><%= link_to 'student\'s profile', user_path(student) %></p>
   <% end %>
 <% end %>
 

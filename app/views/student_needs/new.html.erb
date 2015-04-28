@@ -7,13 +7,13 @@
     <%# unsure what to do with categories (Katie) %>
     <%= f.hidden_field :user_id, :value => current_user.id %>
     <%= f.label :need_id, "Select a Category" %>
-    <%= f.collection_select :need_id, Need.all, :id, :title %>
-    <%= f.label :proof, "Show Proof:" %>
+    <%= f.collection_select :need_id, Need.all, :id, :title %><br>
+    <%= f.label :proof, "Proof" %>
     <%= f.file_field :proof, accept: 'image/png, image/jpeg' %><br>
     <%= f.label :need_expense %>
-    <%= f.number_field :need_expense %>
+    <%= f.number_field :need_expense %><br><br>
     <%= f.label :end_date %>
-    <%= f.date_field :end_date %><br />
+    <%= f.date_field :end_date %><br /><br>
     <%= f.submit "Submit need" %>
   <% end %>
 
