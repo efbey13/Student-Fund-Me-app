@@ -11,6 +11,7 @@ class UserMailer < ApplicationMailer
       # binding.pry
     @sender = sender
     @user = user
+
     mail(to: @user.email, subject: 'You have a Follower')
   end
 

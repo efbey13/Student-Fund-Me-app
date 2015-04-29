@@ -12,13 +12,9 @@ class ChallengesController < ApplicationController
 
   def create
     @challenge = Challenge.find_by(:name => params[:name])
-    # binding.pry
-    if params[:user][:name].empty?
-      current_user.sponsored_students.each do |row|
-        StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>row.student_id, :sponsor_id=> current_user.id)
-      end
-    else
-      StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>User.find_by(:first_name => params[:user][:name]).id, :sponsor_id=> current_user.id)
+    current_user.sponsored_students.each do |row|
+      StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>row.student_id, :sponsor_id=> current_user.id)
+      UserMailer.challenged_email(current_user, User.find(row.student_id)).deliver_now
     end
     redirect_to user_path(current_user)
   end
@@ -30,7 +26,7 @@ class ChallengesController < ApplicationController
   end
 
   def index
-    # @student_challenges = StudentChallenge.all
+    @student_challenges = StudentChallenge.all
   end
 
   def show
