@@ -11,7 +11,7 @@
 <%= f.label :race, "Race" %>
 <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
 <%= f.label :location, "Location" %>
-<%= f.text_field :location %><br>
+<%= f.collection_select :location, Borough.all, :id, :name %><br>
 <%= f.label :bio, "Biography" %>
 <%= f.text_area(:bio, cols: 20, rows: 5) %><br>
 

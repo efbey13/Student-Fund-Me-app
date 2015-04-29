@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150429144341) do
   end
 
   create_table "boroughs", force: :cascade do |t|
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
