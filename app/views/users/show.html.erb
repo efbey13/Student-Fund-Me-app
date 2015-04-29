@@ -104,7 +104,7 @@
 <% if current_user.status == "sponsor" && current_user.id == @user.id %>
       <h1>Challenges</h1>
       <% current_user.challenged_students.each do |row| %>
-        <b><%= link_to Challenge.find(row.challenge_id).name,challenge_path(Challenge.find(row.challenge_id)) %> :</b>
+        <b><%= link_to Challenge.find(row.challenge_id).name,challenge_path(row) %> :</b>
         <%= User.find_by(:id => row.student_id).first_name %><br>
       <% end %>
       <br>
