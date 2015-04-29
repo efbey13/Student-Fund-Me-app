@@ -13,9 +13,14 @@ class SponsorNeedsController < ApplicationController
     if payment['status'] == 'succeeded'
       flash[:notice] = "You have successfully donated to this need."
       student_sponsor.update(sponsored: true)
+      @student_need.total_amount += sponsor_need.amount_given
+      @student_need.save
+      if @student_need.total_amount >= @student_need.need_expense
+        @student_need.update(state: 'fulfilled')
+      end
       redirect_to student_need_path(@student_need)
     else
-      flash[:notice] = "Payment failed"
+      flash[:notice] = "Something went wrong"
       redirect_to make_payment_path(sponsor_need)
     end
   end
