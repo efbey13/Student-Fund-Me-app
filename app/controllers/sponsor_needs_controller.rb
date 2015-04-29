@@ -3,6 +3,8 @@ class SponsorNeedsController < ApplicationController
   def back_need
     sponsor_need = SponsorNeed.find(params[:id])
     @student_need = StudentNeed.find(sponsor_need.student_need_id)
+    student_sponsor = StudentSponsor.where(student_id: @student_need.student)
+    .where(sponsor_id: current_user.id)[0]
     payment = Payments.donate_to_need(
     sponsor_need.amount_given.to_i * 100,
     params[:stripeToken]
@@ -10,6 +12,7 @@ class SponsorNeedsController < ApplicationController
     sponsor_need.charge = payment['id']
     if payment['status'] == 'succeeded'
       flash[:notice] = "You have successfully donated to this need."
+      student_sponsor.update(sponsored: true)
       redirect_to student_need_path(@student_need)
     else
       flash[:notice] = "Payment failed"
@@ -28,7 +31,7 @@ class SponsorNeedsController < ApplicationController
   end
 
   private
-  
+
   def sponsor_need_params
     params.permit(:student_need_id, :amount_given).merge(:sponsor_id => current_user.id)
   end
