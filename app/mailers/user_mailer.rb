@@ -11,7 +11,14 @@ class UserMailer < ApplicationMailer
       # binding.pry
     @sender = sender
     @user = user
+
     mail(to: @user.email, subject: 'You have a Follower')
+  end
+
+  def challenged_email(sender, user)
+    @sender = sender
+    @user = user
+    mail(to: @user.email, subject: 'you have a new challenge')
   end
 
 end

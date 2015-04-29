@@ -20,7 +20,8 @@ class ChallengesController < ApplicationController
       flash[:notice] = "Challenge successfully created"
     else
       StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>User.find_by(:first_name => params[:user][:name]).id, :sponsor_id=> current_user.id)
-      flash[:notice] = "Post successfully created"
+      UserMailer.challenged_email(current_user, User.find(row.student_id)).deliver_now
+      flash[:notice] = "Challenge successfully created"
     end
     redirect_to user_path(current_user)
   end
@@ -32,7 +33,7 @@ class ChallengesController < ApplicationController
   end
 
   def index
-    # @student_challenges = StudentChallenge.all
+    @student_challenges = StudentChallenge.all
   end
 
   def show
