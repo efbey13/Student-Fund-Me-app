@@ -1,3 +1,17 @@
 <h1>Challenges#index</h1>
 <p>Find me in app/views/challenges/index.html.erb</p>
-<%%>
+
+<% Challenge.all.each do |challenge| %>
+      <b><%= challenge.name %></b><br>
+      <% student_challenge = StudentChallenge.where(:challenge_id => challenge.id) %>
+      <% if student_challenge == nil %>
+      <% else%>
+        <% student_challenge.each do |st| %>
+        <%= User.find(st.sponsor_id).first_name %><br>
+        <%= User.find(st.student_id).first_name %><br>
+        <% end %>
+      <% end %>
+
+
+
+<% end %>

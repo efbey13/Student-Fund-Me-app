@@ -5,6 +5,9 @@
     <%= label_tag :type_of_challenge %>
     <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] }) %>
     <br>
+    <%= label_tag :students_to_challenge %>
+    <%= select("user", "name", current_user.sponsored_students.all.collect {|u| User.find(u).first_name}, prompt: 'All') %>
+    <br>
     <%= submit_tag('create challenge') %>
   <% end %>
 <!-- We put the challenges in the seed file and all you have to do is use collection select -->

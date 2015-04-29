@@ -84,6 +84,13 @@
       <% @sponsored_students.each do |row|%>
       <%= User.find(row.student_id).first_name%><br>
       <% end %>
+
+        <h1>SPONSORED USERS</h1>
+            <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
+            <%= User.find_by(:id => row.student_id).first_name %>
+            <% end %>
+
+
 <% elsif current_user.status == 'student' && current_user.id == @user.id %>
        <h1>Followers</h1>
        <% @student_sponsors.each do |row|%>
@@ -97,17 +104,21 @@
 <% if current_user.status == "sponsor" && current_user.id == @user.id %>
       <h1>Challenges</h1>
       <% current_user.challenged_students.each do |row| %>
-        <%= row %>
-        <%= Challenge.find_by(:id => row.challenge_id).name %>
-        <% current_user.sponsored_students.where(:sponsored => true).each do |row|%>
-        <%= User.find_by(:id => row.student_id).first_name%>
-        <% end %>
+        <b><%= link_to Challenge.find(row.challenge_id).name,challenge_path(Challenge.find(row.challenge_id)) %> :</b>
+        <%= User.find_by(:id => row.student_id).first_name %><br>
       <% end %>
-        <br>
-      <% @set_challenges.each do |challenge| %>
-      <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %><br>
-      <% end %>
+      <br>
+
+      <h1>Challenge By Category</h2>
+      <% Challenge.all.each do |challenge| %>
+          <%= link_to challenge.name, '/challenges' %><br>
+      <%end%>
+
+
+
+
       <h3><%= link_to "Create A Challenge", new_challenge_path %></h3>
+
 
 <% elsif current_user.status == 'student' && current_user.id == @user.id  %>
       <h1>Challenges</h1>
@@ -115,6 +126,9 @@
       <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
       <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
       <% end %>
+
+
+
       <h1>Challenges Accepted</h1>
       <% StudentChallenge.where(:accepted => true).each do |challenge|%>
       <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:

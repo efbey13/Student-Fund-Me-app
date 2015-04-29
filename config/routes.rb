@@ -73,7 +73,7 @@ Rails.application.routes.draw do
     resources :challenges
   end
 
-  resources :challenges, :only => [:new, :show]
+  resources :challenges, :only => [:new, :show, :index]
   resources :student_needs, :only => [:new, :create, :show]
 
   resources :search do

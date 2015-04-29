@@ -6,8 +6,8 @@ class SearchesController < ApplicationController
     @major = User.uniq.pluck(:major)
     @gender = User.uniq.pluck(:gender)
     @location = User.uniq.pluck(:location)
-    @race = ["Caucasion", "African American", "Asian", "Indian", "Hispanic"]
-    
+    @race = ["Caucasian", "African American", "Asian", "Indian", "Hispanic"]
+
   end
 
   def create

@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     @student_sponsors = current_user.student_sponsors
     if current_user.status == 'sponsor'
       @set_challenges = current_user.challenged_students
-    elsif current_user.status ==
+    elsif current_user.status == 'student'
        @challenges = current_user.student_challenges
     end
   end
