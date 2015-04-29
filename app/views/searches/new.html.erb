@@ -23,7 +23,7 @@
   <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
 
   <%= f.label :location, "Location" %>
-  <%= f.text_field :location, placeholder: "Bronx, NY", id: "autocompleteloc" %><br>
+  <%= f.collection_select :location, Borough.all, :id, :name, placeholder: "Bronx, NY" %><br>
 
 <%= f.submit "Find a Student", class: "btn btn-default btn-sm" %>
 <% end %>
@@ -37,11 +37,5 @@
 <script>
   $( "#autocomplete" ).autocomplete({
     source: <%= raw User.uniq.pluck(:school_name).compact %>
-  });
-</script>
-
-<script>
-  $( "#autocompleteloc" ).autocomplete({
-    source: <%= raw User.uniq.pluck(:location).compact %>
   });
 </script>

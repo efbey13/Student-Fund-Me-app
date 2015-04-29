@@ -24,7 +24,7 @@ class User < ActiveRecord::Base
 
   has_many :challenges, :foreign_key=> 'sponsor_id'
 
-
+  belongs_to :borough
 
 
   def self.send_email(email)
