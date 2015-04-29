@@ -3,15 +3,12 @@
 
 <% Challenge.all.each do |challenge| %>
       <b><%= challenge.name %></b><br>
-      <% student_challenge = StudentChallenge.where(:challenge_id => challenge.id) %>
+      <b>Sponsor: </b><%= User.find(current_user.id).first_name %><br>
+      <% student_challenge = StudentChallenge.where(:challenge_id => challenge.id, :sponsor_id => current_user.id) %>
       <% if student_challenge == nil %>
       <% else%>
         <% student_challenge.each do |st| %>
-        <%= User.find(st.sponsor_id).first_name %><br>
-        <%= User.find(st.student_id).first_name %><br>
+        Student: <%= User.find(st.student_id).first_name %><br>
         <% end %>
       <% end %>
-
-
-
 <% end %>

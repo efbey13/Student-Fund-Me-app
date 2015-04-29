@@ -11,14 +11,16 @@ class ChallengesController < ApplicationController
   end
 
   def create
-    @challenge = Challenge.find_by(:name => params[:name])
     # binding.pry
+    @challenge = Challenge.find_by(:name => params[:name])
     if params[:user][:name].empty?
       current_user.sponsored_students.each do |row|
         StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>row.student_id, :sponsor_id=> current_user.id)
       end
+      flash[:notice] = "Challenge successfully created"
     else
       StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>User.find_by(:first_name => params[:user][:name]).id, :sponsor_id=> current_user.id)
+      flash[:notice] = "Post successfully created"
     end
     redirect_to user_path(current_user)
   end
