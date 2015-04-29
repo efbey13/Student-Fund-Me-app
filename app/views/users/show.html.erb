@@ -77,6 +77,7 @@
           <% end %><br/>
         <% end %>
 <% elsif current_user.status == 'student' %>
+        <!-- List Followers -->
         <h1>Followers</h1>
           <% current_user.sponsors.each do |sponsor| %>
             <%= sponsor.first_name %>
