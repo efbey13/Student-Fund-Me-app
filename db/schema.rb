@@ -11,13 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150429134352) do
+ActiveRecord::Schema.define(version: 20150429144341) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "achievements", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "boroughs", force: :cascade do |t|
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -94,6 +99,7 @@ ActiveRecord::Schema.define(version: 20150429134352) do
     t.datetime "updated_at",   null: false
     t.boolean  "accepted"
     t.integer  "amount"
+    t.string   "description"
   end
 
   create_table "student_needs", force: :cascade do |t|
@@ -141,7 +147,11 @@ ActiveRecord::Schema.define(version: 20150429134352) do
     t.string   "uid"
     t.date     "spring_semester"
     t.date     "fall_semester"
+    t.integer  "borough_id"
   end
 
+  add_index "users", ["borough_id"], name: "index_users_on_borough_id", using: :btree
+
   add_foreign_key "identities", "users"
+  add_foreign_key "users", "boroughs"
 end
