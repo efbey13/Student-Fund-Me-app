@@ -11,7 +11,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
+<<<<<<< HEAD
 ActiveRecord::Schema.define(version: 20150429131615) do
+=======
+ActiveRecord::Schema.define(version: 20150428200951) do
+>>>>>>> f6ef0af56b186863986d54477a55e2b6a84bd37f
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,8 +102,13 @@ ActiveRecord::Schema.define(version: 20150429131615) do
   create_table "student_needs", force: :cascade do |t|
     t.float    "need_expense"
     t.boolean  "need_met"
+<<<<<<< HEAD
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+=======
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
+>>>>>>> f6ef0af56b186863986d54477a55e2b6a84bd37f
     t.integer  "user_id"
     t.integer  "need_id"
     t.date     "start_date"
@@ -107,6 +116,7 @@ ActiveRecord::Schema.define(version: 20150429131615) do
     t.integer  "total_amount", default: 0
     t.string   "proof"
     t.text     "description"
+    t.string   "state",        default: "pending"
   end
 
   create_table "student_sponsors", force: :cascade do |t|

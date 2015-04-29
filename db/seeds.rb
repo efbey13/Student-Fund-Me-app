@@ -16,3 +16,10 @@ Need.create(
     {:title => "Health Plan"}
   ]
 )
+Challenges.create(
+  [
+    {name: "Increase GPA"},
+    {name: "Dean's List"}
+    {name: "Community Service"}
+  ]
+)
