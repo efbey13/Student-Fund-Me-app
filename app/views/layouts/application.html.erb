@@ -1,61 +1,268 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>HandUp</title>
-  <meta charset="utf-8">
-  <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
-  <%= stylesheet_link_tag 'application', media: 'all' %>
-  <%= javascript_include_tag 'application'%>
-  <%= javascript_include_tag 'https://js.stripe.com/v1/', :defaults %>
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
-  <script src="//code.jquery.com/jquery-1.10.2.js"></script>
-  <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+    <title>HandUp</title>
+    <meta charset="utf-8">
+    <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
+    <meta name="author" content="The Holy Trinity">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hand Up</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= javascript_include_tag 'application'%>
+    <%= javascript_include_tag 'https://js.stripe.com/v1/', :defaults %>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 
-  <%= csrf_meta_tags %>
-  <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
-  <%= analytics_init if Rails.env.production? %>
+    <%= csrf_meta_tags %>
+    <%= tag :meta, name: 'stripe-key', content: STRIPE_PUBLIC_KEY %>
+    <%= analytics_init if Rails.env.production? %>
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/agency.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Droid+Serif:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto+Slab:400,100,300,700' rel='stylesheet' type='text/css'>
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
 </head>
-<body>
+<body id="page-top" class="index">
 <% if current_user == nil %>
-    <div id="wrap">
-      <div id="header-wrap">
-        <header id="nav">
-          <a class="button-signup">Create Account</a>
-          <a class="nav-buttons">Find A Student</a>
-          <a class="nav-buttons">Sponsor A Student</a>
-          <a class="nav-buttons">Lend A Hand</a>
-          <b><a class="button-login" href="/auth/linkedin">log in<a></b>
-          <!-- <b><a class="button-login" href="/signout">log out<a></b> -->
 
-        </header>
-      </div>
 
-      <main id="app-content">
+<!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+          [ Navigation ]
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+          <nav class="navbar navbar-default navbar-fixed-top">
+          <div class="container">
+          <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand page-scroll" href="#page-top">HandUp</a> -->
+                </div><!--end navbar-header page-scroll -->
 
-        <!-- \\\\\\\\\\\ [ SLIDE SHOW START ] /////////// -->
-        <div id="myCarousel" class="carousel slide">
-        <ol class="carousel-indicators">
-          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-          <li data-target="#myCarousel" data-slide-to="1"></li>
-          <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
-        <!-- Carousel items -->
-        <div class="carousel-inner">
-          <div class="active item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
-          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover;"></div>
-          <div class="item" style="background:url('http://www.theartcareerproject.com/wp-content/uploads/2014/10/shutterstock_214216972.jpg'); background-size:cover"></div>
-          <!-- <div class="item" style="background:url(''); background-size:cover"></div> -->
+          <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="hidden"><a href="#page-top"></a></li>
+                    <li><a class="page-scroll" href="#services">How It Works</a></li>
+                    <li><a class="page-scroll" href="#about">About</a></li>
+                    <li><a class="page-scroll" href="/auth/linkedin">Log In</a></li>
+                </ul>
+                </div><!-- /.navbar-collapse -->
+          </div><!--end container--> <!-- /.container-fluid -->
+          </nav>
+
+
+<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+          [ Header ]
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+          <header>
+          <div class="container">
+          <div class="intro-text">
+              <div class="intro-lead-in">Welcome To HandUp!</div>
+              <div class="intro-heading">Sponsor A Student Today</div>
+              <a href="#services" class="page-scroll btn btn-xl">Tell Me More</a>
+          </div><!--end intro-text-->
+          </div><!--end container-->
+          </header>
+
+
+
+<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+        [ Services Section ]
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+        <section id="services">
+        <div class="container">
+          <div class="row">
+          <div class="col-lg-12 text-center">
+              <h2 class="section-heading">How It Works</h2>
+              <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+          </div><!--end col-lg-12 text-center-->
+          </div><!-- end row -->
+
+          <div class="row text-center">
+          <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-user fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Sign In With Linkden</h4>
+              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div><!-- end col-md-4 -->
+
+          <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+                <i class="fa fa-circle fa-stack-2x text-primary"></i>
+                <i class="fa fa-search fa-stack-1x fa-inverse"></i>              </span>
+              <h4 class="service-heading">Search</h4>
+              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div><!-- end col-md-4 -->
+
+          <div class="col-md-4">
+              <span class="fa-stack fa-4x">
+              <i class="fa fa-circle fa-stack-2x text-primary"></i>
+              <i class="fa fa-usd fa-stack-1x fa-inverse"></i>
+              </span>
+              <h4 class="service-heading">Sponsor</h4>
+              <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+          </div><!-- end col-md-4 -->
+          </div><!-- end row text-center -->
+    </div><!-- end container-->
+    </section><!--end services-->
+
+
+<!--|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+  [ ABOUT Section ]
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||-->
+    <!-- About Section -->
+    <section id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h2 class="section-heading">About</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                    <ul class="timeline">
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/1.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>2009-2011</h4>
+                                    <h4 class="subheading">Our Humble Beginnings</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/2.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>March 2011</h4>
+                                    <h4 class="subheading">An Agency is Born</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/3.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>December 2012</h4>
+                                    <h4 class="subheading">Transition to Full Service</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="img/about/4.jpg" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>July 2014</h4>
+                                    <h4 class="subheading">Phase Two Expansion</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <h4>Be Part
+                                    <br>Of Our
+                                    <br>Story!</h4>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <!-- Carousel nav -->
-        <a class="carousel-control left" href="#myCarousel" data-slide="prev">
-          <div class="box">  </div>
-        </a>
-        <a class="carousel-control right" href="#myCarousel" data-slide="next">&rsaquo;</a>
-       </div>
-       <!-- \\\\\\\\\\\ [ SLIDE SHOW END ] /////////// -->
-      </main>
-    </div>
+    </section>
+
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <span class="copyright">Copyright &copy; Hand Up 2015</span>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-twitter"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="list-inline quicklinks">
+                        <li><a href="#">Privacy Policy</a>
+                        </li>
+                        <li><a href="#">Terms of Use</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Plugin JavaScript -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+    <script src="js/classie.js"></script>
+    <script src="js/cbpAnimatedHeader.js"></script>
+
+    <!-- Contact Form JavaScript -->
+    <script src="js/jqBootstrapValidation.js"></script>
+    <script src="js/contact_me.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/agency.js"></script>
+
 <% else %>
+      <!-- \\\\\\ SIGUN UP PROCESS VIEW //////// -->
 
 <%= yield %>
 
