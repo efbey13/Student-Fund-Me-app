@@ -4,7 +4,7 @@ class SearchesController < ApplicationController
     @search = Search.new
     @school_name = User.uniq.pluck(:school_name)
     @major = User.uniq.pluck(:major)
-    @gender = User.uniq.pluck(:gender)
+    @gender = ["Male", "Female", "Other"]
     @location = User.uniq.pluck(:location)
     @race = ["Caucasion", "African American", "Asian", "Indian", "Hispanic"]
     

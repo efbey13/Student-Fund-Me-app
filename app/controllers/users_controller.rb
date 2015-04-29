@@ -1,6 +1,9 @@
 class UsersController < ApplicationController
-  def edit
-    binding.pr
+  # def new
+  # end
+
+  def edit 
+   
   end
 
   def delete
@@ -56,6 +59,8 @@ class UsersController < ApplicationController
 
   def student_edit
     @user = User.find(params[:id])
+    @gender = ["Male", "Female", "Other"]
+    @race = ["Caucasian", "African American", "Asian", "Indian", "Hispanic"]
   end
 
 
