@@ -4,18 +4,16 @@
 <%= f.text_field :school_name %><br/>
 <%= f.label :major, "Major" %>
 <%= f.text_field :major %><br>
-<%= f.label :gpa, "G.P.A" %>
+<%= f.label :gpa, "G.P.A." %>
 <%= f.text_field :gpa %><br>
 <%= f.label :gender, "Gender" %>
-<%= f.text_field :gender %><br>
+<%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} %><br>
 <%= f.label :race, "Race" %>
-<%= f.text_field :race %><br/>
+<%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
 <%= f.label :location, "Location" %>
 <%= f.text_field :location %><br>
 <%= f.label :bio, "Biography" %>
 <%= f.text_area(:bio, cols: 20, rows: 5) %><br>
-
-
 
 <%= f.submit 'Join Us'%>
 <% end %>
