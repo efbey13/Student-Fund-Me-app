@@ -15,10 +15,7 @@ class StudentNeedsController < ApplicationController
     end
   end
 
-
-
   def select_amount
-
     @student_need = StudentNeed.find(params[:id])
   end
 
