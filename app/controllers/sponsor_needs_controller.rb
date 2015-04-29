@@ -28,7 +28,7 @@ class SponsorNeedsController < ApplicationController
   end
 
   private
-
+  
   def sponsor_need_params
     params.permit(:student_need_id, :amount_given).merge(:sponsor_id => current_user.id)
   end

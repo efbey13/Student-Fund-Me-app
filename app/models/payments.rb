@@ -10,6 +10,8 @@ class Payments
 
   def self.refund_money(charge)
     charge = Stripe::Charge.retrieve(charge)
-    charge.refunds.create
+    charge.refunds.create(
+    
+    )
   end
 end
