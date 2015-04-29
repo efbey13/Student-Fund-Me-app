@@ -10,7 +10,7 @@
     <%= f.collection_select :need_id, Need.all, :id, :title %><br>
     <%= f.label :proof, "Proof" %>
     <%= f.file_field :proof, accept: 'image/png, image/jpeg' %><br>
-    <%= f.label :need_expense %>
+    <%= f.label :need_expense, "Need Expense $"%>
     <%= f.number_field :need_expense %><br><br>
     <%= f.label :end_date %>
     <%= f.date_field :end_date %><br /><br>

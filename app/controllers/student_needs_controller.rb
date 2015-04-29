@@ -10,16 +10,12 @@ class StudentNeedsController < ApplicationController
 
   def create
     @student_need = StudentNeed.new(student_needs_params)
-    binding.pry
     if @student_need.save
       redirect_to user_path(@student_need.student)
     end
   end
 
-
-
   def select_amount
-
     @student_need = StudentNeed.find(params[:id])
   end
 

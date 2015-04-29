@@ -5,8 +5,7 @@
 <% else %>
   <% @search.search_students.each do |student| %>
   <%= image_tag student.profile_photo %>
-  <h4><%= student.first_name %></h4>
-  <h4><%= student.last_name %></h4>
+  <h4><a href="/users/<%=student.id%>"><%= student.first_name %> <%= student.last_name %></a></h4>
   <p>Email: <%= student.email %></p>
   <p>School Name: <%= student.school_name %></p>
   <p>Major: <%= student.major %></p>

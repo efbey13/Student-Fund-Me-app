@@ -24,3 +24,12 @@ Challenge.create(
     {name: "Community Service"}
   ]
 )
+Borough.create(
+  [
+    {name: "Brooklyn"},
+    {name: "Bronx"},
+    {name: "Queens"},
+    {name: "Manhattan"},
+    {name: "Staten Island"},
+  ]
+)
