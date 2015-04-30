@@ -40,7 +40,6 @@ class SponsorNeedsController < ApplicationController
   end
 
   def show_donations
-    binding.pry
     @sponsor_needs = SponsorNeed.where(sponsor_id: params[:id]).includes(:student_need)
   end
 

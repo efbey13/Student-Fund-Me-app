@@ -15,19 +15,19 @@
       </div>
       <div class="form-group">
         <%= f.label :gender, "Gender" %>
-        <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} %><br>
+        <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'}, class: "btn btn-default" %>
       </div>
       <div class="form-group">
         <%= f.label :race, "Race" %>
-        <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
+        <%= f.select :race, options_for_select(@race), {prompt: 'Select'}, class: "btn btn-default" %>
       </div>
       <div class="form-group">
         <%= f.label :location, "Location" %>
-        <%= f.collection_select :location, Borough.all, :id, :name, {prompt: 'Select'} %><br>
+        <%= f.collection_select :location, Borough.all, :id, :name, {prompt: 'Select'}, class: "btn btn-default" %>
       </div>
       <div class="form-group">
         <%= f.label :bio, "Biography" %>
-        <%= f.text_area(:bio, class: "form-control") %><br>
+        <%= f.text_area(:bio, class: "form-control") %>
       </div>
         <%= f.submit 'Join Us', class: "btn btn-primary" %>
       <% end %>
