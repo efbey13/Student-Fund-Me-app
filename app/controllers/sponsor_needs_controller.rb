@@ -36,8 +36,11 @@ class SponsorNeedsController < ApplicationController
   end
 
   def total_given
-    # @sponsor_needs = SponsorNeed.where(sponsor_id: current_user.id)
     @user = current_user
+  end
+
+  def show_donations
+    @sponsor_needs = SponsorNeed.where(sponsor_id: params[:id]).includes(:student_need)
   end
 
   private
