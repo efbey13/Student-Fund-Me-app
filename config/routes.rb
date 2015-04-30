@@ -58,6 +58,8 @@ Rails.application.routes.draw do
 
   post 'challenges/new' => 'challenges#create'
 
+  get '/sponsor_needs/:id/show_donations' => 'sponsor_needs#show_donations', as: 'show_donations'
+
   resources :needs
 
   resources :searches
