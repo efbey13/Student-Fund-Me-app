@@ -3,7 +3,8 @@
   <title>HandUp</title>
   <meta charset="utf-8">
   <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
-  <%= stylesheet_link_tag 'sponsor_profile', media: 'all' %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
   <%= javascript_include_tag 'https://js.stripe.com/v1/', :defaults %>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
@@ -13,7 +14,7 @@
   <%= analytics_init if Rails.env.production? %>
 
 
-  
+
 </head>
 <% if current_user == nil %>
 <body id="page-top" class="index">

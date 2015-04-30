@@ -18,10 +18,3 @@
 //= require bootstrap
 //= require_tree ../../../vendor/assets/javascripts/.
 //= require_tree .
-
-// <!--Global JS-->
-// <script src="../vendor/jquery-1.11.1.min.js"></script>
-// <script src="../plugins/bootstrap/js/bootstrap.min.js"></script>
-// <script src="../plugins/navgoco/jquery.navgoco.min.js"></script>
-// <script src="../plugins/pace/pace.min.js"></script>
-// <script src="../js/src/app.js"></script>
