@@ -70,14 +70,12 @@
 <% if current_user.status == 'sponsor' && current_user.id == @user.id %>
       <h1>Following</h1>
         <% @sponsored_students.each do |student| %>
-            <%= form_tag do %>
+
+
+
             <%= link_to student.student.first_name, student_show_path(student.student)%>
-            <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })%>
-            <%= submit_tag('challenge') %>
           <% end %><br/>
-        <% end %>
 <% elsif current_user.status == 'student' %>
-        <!-- List Followers -->
         <h1>Followers</h1>
           <% current_user.sponsors.each do |sponsor| %>
             <%= sponsor.first_name %>
@@ -105,9 +103,12 @@
 <% if current_user.status == "sponsor" && current_user.id == @user.id %>
       <h1>Challenges</h1>
       <% current_user.challenged_students.each do |row| %>
-        <b><%= link_to Challenge.find(row.challenge_id).name,challenge_path(row) %> :</b>
-        <%= User.find_by(:id => row.student_id).first_name %><br>
+          <b><%= link_to Challenge.find(row.challenge_id).name,challenge_path(row) %> :</b>
+          <%= User.find_by(:id => row.student_id).first_name %><br>
       <% end %>
+          <% if flash[:notice] %>
+          <div class="notice"><%= flash[:notice] %></div>
+          <% end %>
       <br>
 
       <h1>Challenge By Category</h2>
