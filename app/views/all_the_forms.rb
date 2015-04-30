@@ -4,7 +4,7 @@ Create Need (Student view) #permit params need and expense
 
 <%= form_for @user do |f| %>
   <%= f.fields_for :student_needs do |f| %>
-    
+
     <%= f.label :title %>
     <%= f.text_field :title %><br />
 
@@ -52,8 +52,8 @@ private
 
 >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 
-need a form to index through all of the students (students.all) that need a sponsor 
-maybe a category to filter results like by major, school, gpa 
+need a form to index through all of the students (students.all) that need a sponsor
+maybe a category to filter results like by major, school, gpa
 if they select biology then students.all where(sponsor = false && major = biology)
 
 to get the drop down menus
@@ -78,18 +78,18 @@ def new
   end
 end
 
-def accept #student might need a followers table - join table 
+def accept #student might need a followers table - join table
   @user = User.find(params[:id])
   challenge = Challenge.find(params['challenge_id'])
-  challenge.update(accepted: true) 
-  #add challenge to user challenges 
+  challenge.update(accepted: true)
+  #add challenge to user challenges
   flash[:notice] = "Challenge Accepted"
   redirect_to profile_path
 end
 
 def decline
   challenge = Challenge.find(params['challenge_id'])
-  challenge.update(accepted: false) 
+  challenge.update(accepted: false)
   flash[:notice] = "Challenge Declined"
   redirect_to profile_path
 end
@@ -108,11 +108,11 @@ def new
   end
 end
 
-def follow #student might need a followers table - join table 
+def follow #student might need a followers table - join table
   @user = User.find(params[:id])
   #extra step needed
   #add user id of follower to database
-  user_followers.update() 
+  user_followers.update()
   flash[:notice] = "no flash notice"
   redirect_to pool_path(@pool)
 end
@@ -157,15 +157,8 @@ Student Semester Start and End_date
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
+            <%= form_tag("/challenges/create") do %>
+            <%= link_to student.student.first_name, student_show_path(student.student)%>
+            <%= hidden_field_tag student.student.id%>
+            <%= select_tag 'name', options_for_select(Challenge.all.collect{ |u| [u.name] })%>
+            <%= submit_tag('challenge') %>
