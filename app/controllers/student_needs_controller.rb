@@ -35,7 +35,7 @@ class StudentNeedsController < ApplicationController
   private
 
   def student_needs_params
-    params.require(:student_need).permit(:user_id, :need_id, :end_date, :proof, :need_expense).merge(:start_date => Date.today)
+    params.require(:student_need).permit(:user_id, :need_id, :end_date, :proof, :need_expense, :description).merge(:start_date => Date.today)
   end
 
 end
