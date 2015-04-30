@@ -6,7 +6,6 @@
     <meta name="description" content="A platform for students to recieve educational funds in the form of sponsorship">
     <meta name="author" content="The Holy Trinity">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hand Up</title>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= javascript_include_tag 'application'%>
@@ -33,6 +32,25 @@
     <!--[if lt IE 9]>
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="assets/plugins/bootstrap/css/bootstrap.min.css"> -->
+    <!-- Fonts  -->
+    <!-- <link rel="stylesheet" href="font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="simple-line-icons.css"> -->
+    <!-- CSS Animate -->
+    <!-- <link rel="stylesheet" href="animate.css"> -->
+    <!-- Custom styles for this theme -->
+    <!-- <link rel="stylesheet" href="main.css"> -->
+    <!-- Feature detection -->
+    <script src="modernizr-2.6.2.min.js"></script>
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+    <script src="assets/js/vendor/html5shiv.js"></script>
+    <script src="assets/js/vendor/respond.min.js"></script>
     <![endif]-->
 </head>
 <body id="page-top" class="index">
@@ -160,7 +178,7 @@
                         <li class="timeline-inverted">
                             <div class="timeline-image"><span class="fa-stack fa-4x">
                                 <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                                <i class="fa fa-search fa-stack-1x fa-inverse"></i> 
+                                <i class="fa fa-search fa-stack-1x fa-inverse"></i>
                                 <!-- <img class="img-circle img-responsive" src="img/about/2.jpg" alt=""> -->
                                 </span>
                             </div>
@@ -276,7 +294,35 @@
 <% else %>
       <!-- \\\\\\ SIGUN UP PROCESS VIEW //////// -->
 
-<%= yield %>
+
+      <!-- Page Wrapper-->
+       <section id="main-wrapper" class="theme-default">
+         <!-- Page wrapper -->
+          <header id="header"> <%= render partial: "layouts/partials/header" %> </header>
+          <!-- Left Sidebar Navigation -->
+          <aside class="sidebar sidebar-left"> <%= render partial: "layouts/partials/leftsidebar" %> </aside>
+          <!-- Content wraper -->
+           <section class="main-content-wrapper">
+              <!-- Main content view  -->
+                  <%= yield %>
+              <!-- Footer -->
+              <div><%= render partial: "layouts/partials/footer" %></div>
+          </section>
+          <!-- /Content wraper-->
+      </section>
+      <!-- /Page wrapper-->
+      <!-- Right Sidebar Navigation -->
+      <aside><%= render partial: "layouts/partials/rightsidebar" %></aside>
+      <!-- /Right Sidebar Navigation -->
+
+
+       <%= javascript_include_tag 'base' %>
+       <%= javascript_include_tag 'application' %>
+
+
+
+
+
 
 <% end %>
 </body>
