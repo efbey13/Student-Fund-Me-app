@@ -1,34 +1,34 @@
 <h3>Find a student to sponsor</h3>
 
 <%= form_for @search do |f| %>
-  <%= f.label :first_name, "First Name" %>
-  <%= f.text_field :first_name, placeholder: "Mary" %><br>
+  <%= f.label :first_name, "First Name"%>
+  <%= f.text_field :first_name, placeholder: "Mary", class: "form-control" %><br>
 
   <%= f.label :last_name, "Last Name" %>
-  <%= f.text_field :last_name, placeholder: "Smith" %><br>
+  <%= f.text_field :last_name, placeholder: "Smith", class: "form-control" %><br>
 
   <%= f.label :email, "Student Email" %>
-  <%= f.email_field :email, placeholder: "student@nyu.edu" %><br>
+  <%= f.email_field :email, placeholder: "student@nyu.edu", class: "form-control" %><br>
 
   <%= f.label :school_name, "School Name" %>
-  <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete" %><br>
+  <%= f.text_field :school_name, placeholder: "Harvard University", id: "autocomplete", class: "form-control" %><br>
 
   <%= f.label :major, "Major" %>
-  <%= f.select :major, options_for_select(@major), {prompt: 'Select'} %><br>
+  <%= f.select :major, options_for_select(@major), {prompt: 'Select'}, class: "form-control", style: "width: 50%;" %><br>
 
   <%= f.label :gender, "Gender" %>
-  <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} %><br>
+  <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} ,class: "form-control", style: "width: 50%;" %><br>
 
   <%= f.label :race, "Race" %>
-  <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
+  <%= f.select :race, options_for_select(@race), {prompt: 'Select'}, class: "form-control", style: "width: 50%;" %><br>
 
   <%= f.label :location, "Location" %>
-  <%= f.collection_select :location, Borough.all, :id, :name, placeholder: "Bronx, NY" %><br>
+  <%= f.collection_select :location, Borough.all, :id, :name, placeholder: "Bronx, NY", class: "form-control", style: "width: 50%;" %><br>
 
-<%= f.submit "Find a Student", class: "btn btn-default btn-sm" %>
+<%= f.submit "Find a Student", class: "btn btn-default btn-sm" %><br>
 <% end %>
 
-<%= link_to 'back', user_path(current_user)%><br>
+<%= link_to 'back', user_path(current_user), class: "btn btn-default btn-sm"%>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
   <script src="//code.jquery.com/jquery-1.10.2.js"></script>
