@@ -42,6 +42,7 @@
           <h3><%= @user.first_name %>'s Needs</h3>
       <% end%>
 
+  <%= link_to 'See how many lives you\'ve changed', total_given_path %>
 <% end %>
 
 
@@ -86,24 +87,8 @@
         <h3><%= @user.status %></h3>
       <% end%>
 
-<% end %>
-
-<% if current_user.sponsor? %>
-  <%= link_to 'See how many lives you\'ve changed', total_given_path %>
-<%end%>
 
 
 
 
-<% elsif current_user.status == 'student' && current_user.id == @user.id  %>
-      <h1>Challenges</h1>
-      <% @challenges.each do |challenge| %>
-      <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
-      <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
-      <% end %>
-      <h1>Challenges Accepted</h1>
-      <% StudentChallenge.where(:accepted => true).each do |challenge|%>
-      <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
-      <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
-      <% end %>
 <% end %>
