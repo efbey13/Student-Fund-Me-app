@@ -38,7 +38,9 @@ a {
     color: #fed136;
 }
 
-a:hover,
+a:hover { 
+    color: #FFF;
+    },
 a:focus,
 a:active,
 a.active {

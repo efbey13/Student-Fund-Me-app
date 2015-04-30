@@ -1,4 +1,5 @@
 class ChallengesController < ApplicationController
+  
   def edit
     @student_challenge = StudentChallenge.find(params[:id])
   end

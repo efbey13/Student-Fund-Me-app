@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'activities/index'
+
   root :to => 'welcome#home'
 
   get 'identity/add_identity'
@@ -63,6 +65,7 @@ Rails.application.routes.draw do
 
   post 'challenges/new' => 'challenges#create'
 
+  resources :activities
   resources :needs
 
   resources :searches
