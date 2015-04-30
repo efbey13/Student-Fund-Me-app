@@ -1,0 +1,7 @@
+<% @sponsor_needs.each do |need| %>
+  <h4><%=need.student_need.need.title%></h4>
+  <h4><%= need.student_need.description %></h4>
+  <h4><%= need.student_need.student.first_name %></h4>
+  <%= image_tag need.student_need.student.profile_photo %>
+  <h4>You donated $<%=need.amount_given.to_i%>.</h4><br/>
+<% end %>

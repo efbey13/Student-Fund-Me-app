@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
-    # @sponsored_students = @user.sponsored_students
+    @sponsored_students = @user.sponsored_students
     @sponsored_students = current_user.sponsored_students
     @student_sponsors = current_user.student_sponsors
     if current_user.status == 'sponsor'
@@ -65,7 +65,11 @@ class UsersController < ApplicationController
 
 
   def follow
+
+    # binding.pry
+
     @user = User.find(params[:id, :status => "student"])
+
     UserMailer.follow_email(current_user,@user).deliver_now
     # binding.pry
     # @user = User.create_and_send_email(student_params[:email])
@@ -73,7 +77,6 @@ class UsersController < ApplicationController
     flash[:notice] = "Following New Student"
     redirect_to user_path(current_user)
   end
-
 
 
   private
