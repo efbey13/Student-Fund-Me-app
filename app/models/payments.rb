@@ -11,7 +11,16 @@ class Payments
   def self.refund_money(charge)
     charge = Stripe::Charge.retrieve(charge)
     charge.refunds.create(
-      
+
     )
+  end
+
+  def self.give_to_student
+    Stripe::Recipient.create(
+    :name => "John Doe",
+    :type => "individual",
+    :email => "payee@example.com",
+    :bank_account => token_id
+  )
   end
 end
