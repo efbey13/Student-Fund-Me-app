@@ -66,7 +66,6 @@ class UsersController < ApplicationController
 
   def follow
     @user = User.find(params[:id, :status => "student"])
-    binding.pry
     UserMailer.follow_email(current_user,@user).deliver_now
     # binding.pry
     # @user = User.create_and_send_email(student_params[:email])
