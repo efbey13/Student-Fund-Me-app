@@ -9,7 +9,7 @@ class SponsorNeedsController < ApplicationController
     sponsor_need.amount_given.to_i * 100,
     params[:stripeToken]
     )
-    sponsor_need.charge = payment['id']
+    sponsor_need.update(charge: payment['id'])
     if payment['status'] == 'succeeded'
       flash[:notice] = "You have successfully donated to this need."
       student_sponsor.update(sponsored: true)
