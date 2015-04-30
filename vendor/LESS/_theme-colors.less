@@ -5,11 +5,14 @@
             color: #1d212a;
         }
         background: #fff;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
-        .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
+        .nav li.profile > a:hover, 
+        .nav li.profile > a:active, 
+        .nav li.profile > a:focus {
             background: #f6f8f8;
         }
     }
@@ -18,7 +21,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -32,7 +35,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -49,11 +52,12 @@
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+         button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
             color: #1d212a;
         }
         background: #fff;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
@@ -66,7 +70,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -80,7 +84,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -91,17 +95,18 @@
 .theme-dark-full {
     #header {
         .brand{
-            background: #1D212A; 
+            background: #1D212A;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
             color: #fff;
         }
         background: #1D212A;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
-        button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
+          button.sidebar-toggle:hover, button.sidebar-toggle:active,
+          button#toggle-profile:hover,button#toggle-profile:active,
+          button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
            background: lighten(#1D212A,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
@@ -113,7 +118,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -127,7 +132,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -141,16 +146,18 @@
 .theme-blue {
     #header {
         .brand{
-            background: $infoColor;
+            background: @infoColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #1d212a;
+       
         }
         background: #fff;
-         button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
@@ -163,7 +170,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $infoColor;
+        background-color: @infoColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -177,7 +184,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $infoColor;
+        background-color: @infoColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -189,21 +196,22 @@
 .theme-blue-full {
     #header {
         .brand{
-            background: $infoColor;
+            background: @infoColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+         button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #fff;
         }
-        background: $infoColor;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
-        button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
-             background: lighten($infoColor,5%)
+        background: @infoColor;
+         button.sidebar-toggle:hover, button.sidebar-toggle:active,
+         button#toggle-profile:hover,button#toggle-profile:active,
+         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
+             background: lighten(@infoColor,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
-            background: lighten($infoColor,5%)
+            background: lighten(@infoColor,5%)
         }
     }
     .sidebar-left {
@@ -211,7 +219,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $infoColor;
+        background-color: @infoColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -225,7 +233,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $infoColor;
+        background-color: @infoColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -239,16 +247,17 @@
 .theme-grey {
     #header {
         .brand{
-            background: $defaultColor;
+            background: @defaultColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #1d212a;
         }
         background: #fff;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
@@ -261,7 +270,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $defaultColor;
+        background-color: @defaultColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -275,7 +284,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $defaultColor;
+        background-color: @defaultColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -287,21 +296,22 @@
 .theme-grey-full {
     #header {
         .brand{
-            background: $defaultColor;
+            background: @defaultColor;
             .logo{
                 color:#fff;
             }
         }
-        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+         button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #fff;
         }
-        background: $defaultColor;
-         button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
-        button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
-             background: lighten($defaultColor,5%)
+        background: @defaultColor;
+         button.sidebar-toggle:hover, button.sidebar-toggle:active,
+         button#toggle-profile:hover,button#toggle-profile:active,
+         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
+             background: lighten(@defaultColor,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
-            background: lighten($defaultColor,5%)
+            background: lighten(@defaultColor,5%)
         }
     }
     .sidebar-left {
@@ -309,7 +319,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $defaultColor;
+        background-color: @defaultColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -323,7 +333,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $defaultColor;
+        background-color: @defaultColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -334,17 +344,18 @@
 .theme-green {
     #header {
         .brand{
-            background: $successColor;
+            background: @successColor;
             .logo{
                 color:#fff;
             }
         }
-        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+         button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #1d212a;
         }
         background: #fff;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
-        button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
+         button.sidebar-toggle:hover, button.sidebar-toggle:active,
+         button#toggle-profile:hover,button#toggle-profile:active,
+         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
@@ -356,7 +367,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -370,7 +381,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -381,21 +392,22 @@
 .theme-green-full {
     #header {
         .brand{
-            background: $successColor;
+            background: @successColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #fff;
         }
-        background: $successColor;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        background: @successColor;
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
-             background: lighten($successColor,5%)
+             background: lighten(@successColor,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
-            background: lighten($successColor,5%)
+            background: lighten(@successColor,5%)
         }
     }
     .sidebar-left {
@@ -403,7 +415,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -417,7 +429,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $successColor;
+        background-color: @successColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -428,16 +440,17 @@
 .theme-red {
     #header {
         .brand{
-            background: $dangerColor;
+            background: @dangerColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+         button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #1d212a;
         }
         background: #fff;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
             background: #f6f8f8;
         }
@@ -450,7 +463,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $dangerColor;
+        background-color: @dangerColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -464,7 +477,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $dangerColor;
+        background-color: @dangerColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -476,21 +489,22 @@
 .theme-red-full {
     #header {
         .brand{
-            background: $dangerColor;
+            background: @dangerColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #fff;
         }
-        background: $dangerColor;
-         button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        background: @dangerColor;
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
-             background: lighten($dangerColor,5%)
+             background: lighten(@dangerColor,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
-            background: lighten($dangerColor,5%)
+            background: lighten(@dangerColor,5%)
         }
     }
     .sidebar-left {
@@ -498,7 +512,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $dangerColor;
+        background-color: @dangerColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -512,7 +526,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $dangerColor;
+        background-color: @dangerColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;
@@ -524,21 +538,22 @@
 .theme-dark-blue-full {
     #header {
         .brand{
-            background: $primaryColor;
+            background: @primaryColor;
             .logo{
                 color:#fff;
             }
         }
-       button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a {
+        button.sidebar-toggle,button#toggle-profile,button#toggle-fullscreen, .nav li.profile > a{
             color: #fff;
         }
-        background: $primaryColor;
-        button.sidebar-toggle:hover, button.sidebar-toggle:active,button#toggle-profile:hover,button#toggle-profile:active,
+        background: @primaryColor;
+        button.sidebar-toggle:hover, button.sidebar-toggle:active,
+        button#toggle-profile:hover,button#toggle-profile:active,
         button#toggle-fullscreen:hover,button#toggle-fullscreen:active {
-             background: lighten($primaryColor,5%)
+             background: lighten(@primaryColor,5%)
         }
         .nav li.profile > a:hover, .nav li.profile > a:active, .nav li.profile > a:focus {
-            background: lighten($primaryColor,5%)
+            background: lighten(@primaryColor,5%)
         }
     }
     .sidebar-left {
@@ -546,7 +561,7 @@
     }
     .sidebar-mini .sidebar-left .nav > li.active > a:focus, .sidebar-mini .sidebar-left .nav > li.active > a:hover, .sidebar-left .nav > li.active > a, .sidebar-left .nav > li.active > a:focus, .sidebar-left .nav > li.active > a:hover {
         color: #fff;
-        background-color: $primaryColor;
+        background-color: @primaryColor;
     }
     .sidebar-left .nav > li.open > a, .sidebar-left .nav > li > a:hover {
         color: #1d2939;
@@ -560,7 +575,7 @@
     }
     &.sidebar-mini .sidebar-left .nav>li.active>a, &.sidebar-mini .sidebar-left .nav>li.active>a:focus, &.sidebar-mini .sidebar-left .nav>li.active>a:hover, .sidebar-left .nav>li.active>a, .sidebar-left .nav>li.active>a:focus, .sidebar-left .nav>li.active>a:hover {
         color: #fff;
-        background-color: $primaryColor;
+        background-color: @primaryColor;
     }
     &.sidebar-mini .sidebar-left .nav>li.nav-dropdown-open>a, &.sidebar-mini .sidebar-left .nav>li:hover>a {
         color: #1d2939;

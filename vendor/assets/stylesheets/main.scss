@@ -10,9 +10,9 @@
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400,600,700,800");
 
 // Variables, Mixins
-@import "..SASS/_variables.scss";
+@import "../SASS/_variables.scss";
 @import "../SASS/_mixins.scss";
-//
+
 @import "../SASS/_base.scss";
 @import "../SASS/_page-loader.scss";
 @import "../SASS/_header.scss";
@@ -38,4 +38,3 @@
 @import "../SASS/_modals.scss";
 @import "../SASS/_theme-colors.scss";
 @import "../SASS/_demo-settings.scss";
-//
