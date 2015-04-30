@@ -28,15 +28,16 @@
 
       <!-- [ VIEWING OTHER PROFILES ] |||||||||||||||||||||||||||||||||||||||-->
       <% elsif current_user.id != @user.id %>
-          <h3><%= @user.first_name %></h3>
-          <h3><%= @user.status %></h3>
-          <%= form_tag(:action => 'follow') do %>
-          <%= hidden_field_tag(@user.id) %>
-          <%= submit_tag('Follow') %>
+          <h3><%= @user.first_name %> <%= @user.last_name %></h3>
+            <%if !current_user.sponsored_students.pluck(:student_id).include?(@user.id)%>
+              <%= form_tag(:action => 'follow') do %>
+              <%= hidden_field_tag(@user.id) %>
+              <%= submit_tag('Follow') %>
+            <%end%>
           <% end %>
 
-          <p><%= @user.race %></p>
           <p><%= @user.school_name %></p>
+          <p><%= @user.major %></p>
           <!-- [ USERS CHALLENGES ] =========================================-->
           <h3><%= @user.first_name %>'s Needs</h3>
       <% end%>
