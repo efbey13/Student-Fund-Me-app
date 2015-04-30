@@ -35,6 +35,10 @@ class SponsorNeedsController < ApplicationController
     @sponsor_need = SponsorNeed.find(params[:id])
   end
 
+  def total_given
+    @sponsor_needs = SponsorNeed.where(sponsor_id: current_user.id)
+  end
+
   private
 
   def sponsor_need_params

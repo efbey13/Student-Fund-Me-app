@@ -4,6 +4,12 @@
   This need was created <%= @student_need.start_date.to_formatted_s(:long) %>.
 </p><br/>
 <p>
+  This need requires <%=@student_need.need_expense %>
+</p>
+<p>
+  <%= @student_need.total_amount %> dollars has been donated to this need.
+</p>
+<p>
   This need requires <%= @student_need.need_expense %> dollars to be met.
 </p>
 <%= image_tag @student_need.proof_url.to_s %>

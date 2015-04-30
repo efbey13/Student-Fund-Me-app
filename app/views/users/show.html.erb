@@ -139,3 +139,7 @@
 
       <% end %>
 <% end %>
+
+<% if current_user.sponsor? %>
+  <%= link_to 'See how many lives you\'ve changed', total_given_path %>
+<%end%>
