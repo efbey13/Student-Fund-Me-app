@@ -36,7 +36,8 @@ class SponsorNeedsController < ApplicationController
   end
 
   def total_given
-    @sponsor_needs = SponsorNeed.where(sponsor_id: current_user.id)
+    # @sponsor_needs = SponsorNeed.where(sponsor_id: current_user.id)
+    @user = current_user
   end
 
   private

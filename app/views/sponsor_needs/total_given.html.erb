@@ -1,0 +1,12 @@
+<%if SponsorNeed.total_given(@user) == 0.0 %>
+  <h1>You haven't donated to any needs yet!</h1>
+<%else%>
+  <h1><%= SponsorNeed.total_given(@user) %></h1>
+  <p> You have donated to <%= SponsorNeed.where(sponsor_id: @user.id).count %> needs.</p>
+   <h2>Here are the people whos lives you changed!</h2>
+   <% StudentSponsor.where(sponsor_id: 2).pluck(:student_id).each do |student| %>
+      <p>
+        <%= link_to User.find(student).first_name, user_path(User.find(student)) %>
+      </p>
+   <%end%>
+<%end%>
