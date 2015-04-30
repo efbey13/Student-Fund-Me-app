@@ -1,8 +1,10 @@
+<%= javascript_include_tag "//www.google.com/jsapi", "chartkick" %>
 <%if SponsorNeed.total_given(@user) == 0.0 %>
   <h1>You haven't donated to any needs yet!</h1>
 <%else%>
-  <h1><%= SponsorNeed.total_given(@user) %></h1>
+  <h1><%= "You have donated $#{SponsorNeed.total_given(@user).to_i}" %></h1>
   <p> You have donated to <%= SponsorNeed.where(sponsor_id: @user.id).count %> needs.</p>
+  <%= pie_chart SponsorNeed.where(sponsor_id: @user.id).group(:amount_given).count %>
    <h2>Here are the people whos lives you changed!</h2>
    <% StudentSponsor.where(sponsor_id: 2).pluck(:student_id).each do |student| %>
       <p>
