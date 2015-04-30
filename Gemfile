@@ -16,7 +16,12 @@ gem 'coffee-rails', '~> 4.1.0'
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
 gem 'rmagick'
-gem 'public_activity'
+
+
+
+gem 'will_paginate'
+gem 'chartkick'
+
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
@@ -30,7 +35,7 @@ gem 'omniauth'
 gem 'omniauth-linkedin'
 gem 'draper'
 gem 'omniauth-venmo'
-gem 'carrierwave'
+gem 'carrierwave_direct'
 gem 'stripe-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'

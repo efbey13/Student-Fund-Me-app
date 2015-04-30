@@ -43,11 +43,6 @@ Rails.application.routes.draw do
   post '/users/:id' => 'users#follow', as: 'user_followed'
   post '/student_sponsors/create' => 'student_sponsors#create'
 
-
-
-
-
-
   get '/student_needs/:id/select_amount' => 'student_needs#select_amount', as: 'select_amount'
 
   post '/sponsor_needs/save_amount' => 'sponsor_needs#save_amount', as: "save_amount"
@@ -82,5 +77,7 @@ Rails.application.routes.draw do
   resources :search do
     get :autocomplete_school_name, :on => :collection
   end
+
+  get '/sponsor_needs/total_given' => 'sponsor_needs#total_given', as: 'total_given'
 
 end

@@ -1,19 +1,34 @@
-
-<%= form_for(@user, url: {action: 'update'}) do |f| %>
-<%= f.label :school_name, "School Name"%>
-<%= f.text_field :school_name %><br/>
-<%= f.label :major, "Major" %>
-<%= f.text_field :major %><br>
-<%= f.label :gpa, "G.P.A." %>
-<%= f.text_field :gpa %><br>
-<%= f.label :gender, "Gender" %>
-<%= f.select :gender, options_for_select(@gender), {prompt: 'Select'} %><br>
-<%= f.label :race, "Race" %>
-<%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
-<%= f.label :location, "Location" %>
-<%= f.collection_select :location, Borough.all, :id, :name, {prompt: 'Select'} %><br>
-<%= f.label :bio, "Biography" %>
-<%= f.text_area(:bio, cols: 20, rows: 5) %><br>
-
-<%= f.submit 'Join Us'%>
-<% end %>
+<h3>Sign Up</h3>
+    <div class="col-md-4">
+      <%= form_for(@user, class: "form-horizontal", url: {action: 'update'}) do |f| %>
+      <div class="form-group">
+        <%= f.label :school_name, "School Name"%>
+        <%= f.text_field :school_name, class: "form-control"%>
+      </div>
+      <div class="form-group">
+          <%= f.label :major, "Major"%>
+          <%= f.text_field :major, class: "form-control" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :gpa, "G.P.A." %>
+        <%= f.number_field :gpa, class: "form-control", style: "width: 50%;"%>
+      </div>
+      <div class="form-group">
+        <%= f.label :gender, "Gender" %>
+        <%= f.select :gender, options_for_select(@gender), {prompt: 'Select'}, class: "btn btn-default" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :race, "Race" %>
+        <%= f.select :race, options_for_select(@race), {prompt: 'Select'}, class: "btn btn-default" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :location, "Location" %>
+        <%= f.collection_select :location, Borough.all, :id, :name, {prompt: 'Select'}, class: "btn btn-default" %>
+      </div>
+      <div class="form-group">
+        <%= f.label :bio, "Biography" %>
+        <%= f.text_area(:bio, class: "form-control") %>
+      </div>
+        <%= f.submit 'Join Us', class: "btn btn-primary" %>
+      <% end %>
+    </div>
