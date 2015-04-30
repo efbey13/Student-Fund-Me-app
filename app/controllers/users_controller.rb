@@ -29,7 +29,7 @@ class UsersController < ApplicationController
 
   def show
     @user  = User.find(params[:id])
-    @sponsored_students = @user.sponsored_students
+    # @sponsored_students = @user.sponsored_students
     @sponsored_students = current_user.sponsored_students
     @student_sponsors = current_user.student_sponsors
     if current_user.status == 'sponsor'
@@ -74,6 +74,7 @@ class UsersController < ApplicationController
     flash[:notice] = "Following New Student"
     redirect_to user_path(current_user)
   end
+
 
 
   private

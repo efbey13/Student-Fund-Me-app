@@ -52,5 +52,4 @@ class ChallengesController < ApplicationController
 
 
 
-
 end
