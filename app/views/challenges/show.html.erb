@@ -5,8 +5,9 @@ Student: <%= User.find_by(:id => @student_challenge.student_id).first_name %>
 <br>
 Sponsor: <%= User.find_by(:id => @student_challenge.sponsor_id).first_name %>
 <br>
-
-<%= form_for @student_challenge do |f| %>
-  <%= f.check_box :accepted, {}, true, false %>
-  <%= f.submit('Accept Challenge') %>
-<% end %></h4>
+<% if current_user.student? %>
+  <%= form_for @student_challenge do |f| %>
+    <%= f.check_box :accepted, {}, true, false %>
+    <%= f.submit('Accept Challenge') %>
+  <% end %></h4>
+<% end %>

@@ -10,17 +10,3 @@
       <%= f.submit 'Submit Status', class: "btn btn-default btn-xs" %>
   <% end %>
     </div>
-
-
-<%= f.label :race, "Race" %>
-  <%= f.select :race, options_for_select(@race), {prompt: 'Select'} %><br>
-
-
-  <%= f.label :location, "Location", class: "col-xs-2 control-label" %>
-  <div class="col-md-10">
-  <%= f.collection_select :location, Borough.all, :id, :name, placeholder: "Bronx, NY" %><br>
-  </div>
-
-<%= f.submit "Find a Student", class: "btn btn-default btn-sm" %>
-
-<%= link_to 'back', user_path(current_user), class: "btn btn-default btn-xs"%><br>
