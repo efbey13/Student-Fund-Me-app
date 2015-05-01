@@ -15,7 +15,8 @@
   <%= analytics_init if Rails.env.production? %>
 </head>
 <body>
-  <b><a class="button-login" href="/auth/linkedin">log in<a></b>
+  <b><a class="button-login" href="/auth/linkedin">log in<a></b><br>
+    <b><a class="button-login" href="/signout">log out<a></b>
 <%= yield %>
 </body>
 </html>
