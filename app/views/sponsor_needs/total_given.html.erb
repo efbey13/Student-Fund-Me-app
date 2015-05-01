@@ -7,7 +7,7 @@
   <p>You're average donation is $<%=SponsorNeed.where(sponsor_id: @user.id).average(:amount_given)%></p>
   <%= pie_chart SponsorNeed.where(sponsor_id: @user.id).group(:amount_given).count %>
    <h2>Here are the people whos lives you changed!</h2>
-   <% StudentSponsor.where(sponsor_id: 2).pluck(:student_id).each do |student| %>
+   <% StudentSponsor.where(sponsor_id: current_user.id).pluck(:student_id).each do |student| %>
       <p>
         <%= link_to User.find(student).first_name, user_path(User.find(student)) %>
       </p>
