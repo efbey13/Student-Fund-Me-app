@@ -108,7 +108,7 @@
           <div class="row">
           <div class="col-lg-12 text-center">
               <h2 class="section-heading">About</h2>
-              <h3 class="section-subheading text-muted">This is about the app.</h3>
+              <h3 class="section-subheading text-muted">Student Crowdfunding for College.</h3>
           </div><!--end col-lg-12 text-center-->
           </div><!-- end row -->
 
@@ -330,21 +330,21 @@
                       <i class="icon-user"></i>
                       </button>
                       </li>
-
+<!--
                       <li class="hidden-xs">
-                      <input type="text" class="search" placeholder="Search project...">
+                      <input type="text" class="search" placeholder="Search">
                       <button type="submit" class="btn btn-sm btn-search"><i class="fa fa-search"></i>
                       </button>
                       </li>
-                      </ul>
+                      </ul> -->
 
-                      <ul class="nav navbar-nav navbar-right">
-                      <li class="toggle-navigation toggle-right">
-                      <button class="sidebar-toggle" id="toggle-right">
-                      <i class="fa fa-indent"></i>
-                      </button>
-                      </li>
-                      </ul>
+            <!--           <ul class="nav navbar-nav navbar-right">
+            <li class="toggle-navigation toggle-right">
+            <button class="sidebar-toggle" id="toggle-right">
+            <i class="fa fa-indent"></i>
+            </button>
+            </li>
+            </ul> -->
         </header>
 <!--||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
         [ LEFT SIDE BAR ]
@@ -353,7 +353,11 @@
                     <div class="sidebar-profile">
                         <!-- [ Profile Pic ] ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~-->
                         <div class="avatar">
-                        <img class="img-circle profile-image" src="assets/img/profile.jpg" alt="profile">
+                          <% if current_user.first_name == 'Mubiyna' %>
+                        <img class="img-circle profile-image" src="https://media.licdn.com/mpr/mpr/shrinknp_200_200/p/3/005/0b1/123/135ee85.jpg" alt="profile">
+                        <% else %>
+                        <img class="img-circle profile-image" src="https://scontent-lga.xx.fbcdn.net/hphotos-frc3/v/t1.0-9/64323_451871911556232_603545374_n.jpg?oh=154451703ff14330cfe264a25202a097&oe=55D93737" alt="profile">
+                        <% end %>
                         <i class="on border-dark animated bounceIn"></i>
                         </div>
 
@@ -409,23 +413,24 @@
                 <ul class="nav nav-pills nav-stacked">
                     <li class="active">
                     <a href="/users/<%=current_user.id%>" title="Dashboard">
+
                     <i class="fa  fa-fw fa-tachometer"></i> Dashboard
                     </a>
                     </li>
                     <!--========================================================
                      [ MENU Button ]
                     =========================================================-->
-                    <li class="nav-dropdown">
+                    <!-- <li class="nav-dropdown">
                       <a href="#" title="UI Elements">
                       <i class="fa  fa-fw fa-cogs"></i> Other Elements
                       </a>
-                    </li><!-- end nav-drop down-->
+                    </li> --><!-- end nav-drop down-->
                     <!--========================================================
                      [ FIRST DROP DOWN MENU ]
                     =========================================================-->
                     <li class="nav-dropdown">
                       <a href="#" title="UI Elements">
-                      <i class="fa  fa-fw fa-cogs"></i> Needs
+                      <i class="fa  fa-fw fa-cogs"></i> Challenges
                       </a>
                           <ul class="nav-sub">
                           <li>
@@ -441,20 +446,20 @@
                           <a href="ui-tabs-accordions.html" title="Tabs &amp; Accordions">Tabs &amp; Accordions</a>
                           </li>
                           </ul>
-                    </li><!-- end nav-drop down-->
+                    </li> <!-- end nav-drop down-->
                     <!--========================================================
                      [ SECOND DROP DOWN MENU ]
                     =========================================================-->
                     <li class="nav-dropdown">
                       <a href="#" title="UI Elements">
-                      <i class="fa  fa-fw fa-cogs"></i> UI Elements
+                      <i class="fa  fa-fw fa-cogs"></i>Needs
                       </a>
                           <ul class="nav-sub">
                           <li>
-                          <a href="ui-buttons.html" title="Buttons">Buttons</a>
+                          <a href="ui-buttons.html" title="Buttons">All Needs</a>
                           </li>
                           <li>
-                          <a href="ui-sliders-progress.html" title="Sliders &amp; Progress">Sliders &amp; Progress</a>
+                          <a href="ui-sliders-progress.html" title="Sliders &amp; Progress">Create A Need</a>
                           </li>
                           <li>
                           <a href="ui-modals-popus.html" title="Modals &amp; Popups">Modals &amp; Popups</a>
@@ -463,7 +468,7 @@
                           <a href="ui-tabs-accordions.html" title="Tabs &amp; Accordions">Tabs &amp; Accordions</a>
                           </li>
                           </ul>
-                    </li><!-- end nav-drop down-->
+                    </li> <!-- end nav-drop down-->
                     </ul><!-- end nav nav-pills nav-stacked"-->
                     </nav>
         </aside>
@@ -476,24 +481,27 @@
         <!--main content start-->
         <section class="main-content-wrapper">
             <div class="pageheader">
-                <h1>Dashboard</h1>
-                <p class="description">Welcome to NEUBOARD Responsive Admin Theme</p>
+                <h1></h1>
+                <p class="description"></p>
                 <div class="breadcrumb-wrapper hidden-xs">
-                    <span class="label">You are here:</span>
+                    <span class="label"></span>
                     <ol class="breadcrumb">
-                        <li class="active">Dashboard</li>
+                        <li class="active"></li>
                     </ol>
                 </div>
             </div>
             <section id="main-content">
+
+
+
                 <div class="row">
-                        <div class="col-md-12 col-lg-12">
-            <div class="panel panel-default">
+                        <!-- <div class="col-md-12 col-lg-12"> -->
+            <!-- <div class="panel panel-default"> -->
                 <div class="panel-body ng-binding">
                 <%= yield %>
-                You can quickly bootstrap your Web App project here.
-                </div>
-            </div>
+
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
                 </div>
             </section>
@@ -536,7 +544,9 @@
     <!--/sidebar right end-->
     <!--Global JS-->
     <script src="assets/js/vendor/jquery-1.11.1.min.js"></script>
-    <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/plugins/bootstrap/js/bootstrap.min.js">
+
+    </script>
     <script>
     !function(a){"use strict";var b=function(b,c,d){return this.el=b,this.$el=a(b),this.options=c,this.uuid=this.$el.attr("id")?this.$el.attr("id"):d,this.state={},this.init(),this};b.prototype={init:function(){var b=this;b._load(),b.$el.find("ul").each(function(c){var d=a(this);d.attr("data-index",c),b.options.save&&b.state.hasOwnProperty(c)?(d.parent().addClass(b.options.openClass),d.show()):d.parent().hasClass(b.options.openClass)?(d.show(),b.state[c]=1):d.hide()});var c=a("<span></span>").prepend(b.options.caretHtml),d=b.$el.find("li > a");b._trigger(c,!1),b._trigger(d,!0),b.$el.find("li:has(ul) > a").prepend(c)},_trigger:function(b,c){var d=this;b.on("click",function(b){b.stopPropagation();var e=c?a(this).next():a(this).parent().next(),f=!1;if(c){var g=a(this).attr("href");f=void 0===g||""===g||"#"===g}if(e=e.length>0?e:!1,d.options.onClickBefore.call(this,b,e),!c||e&&f)b.preventDefault(),d._toggle(e,e.is(":hidden")),d._save();else if(d.options.accordion){var h=d.state=d._parents(a(this));d.$el.find("ul").filter(":visible").each(function(){var b=a(this),c=b.attr("data-index");h.hasOwnProperty(c)||d._toggle(b,!1)}),d._save()}d.options.onClickAfter.call(this,b,e)})},_toggle:function(b,c){var d=this,e=b.attr("data-index"),f=b.parent();if(d.options.onToggleBefore.call(this,b,c),c){if(f.addClass(d.options.openClass),b.slideDown(d.options.slide),d.state[e]=1,d.options.accordion){var g=d.state=d._parents(b);g[e]=d.state[e]=1,d.$el.find("ul").filter(":visible").each(function(){var b=a(this),c=b.attr("data-index");g.hasOwnProperty(c)||d._toggle(b,!1)})}}else f.removeClass(d.options.openClass),b.slideUp(d.options.slide),d.state[e]=0;d.options.onToggleAfter.call(this,b,c)},_parents:function(b,c){var d={},e=b.parent(),f=e.parents("ul");return f.each(function(){var b=a(this),e=b.attr("data-index");return e?void(d[e]=c?b:1):!1}),d},_save:function(){if(this.options.save){var b={};for(var d in this.state)1===this.state[d]&&(b[d]=1);c[this.uuid]=this.state=b,a.cookie(this.options.cookie.name,JSON.stringify(c),this.options.cookie)}},_load:function(){if(this.options.save){if(null===c){var b=a.cookie(this.options.cookie.name);c=b?JSON.parse(b):{}}this.state=c.hasOwnProperty(this.uuid)?c[this.uuid]:{}}},toggle:function(b){var c=this,d=arguments.length;if(1>=d)c.$el.find("ul").each(function(){var d=a(this);c._toggle(d,b)});else{var e,f={},g=Array.prototype.slice.call(arguments,1);d--;for(var h=0;d>h;h++){e=g[h];var i=c.$el.find('ul[data-index="'+e+'"]').first();if(i&&(f[e]=i,b)){var j=c._parents(i,!0);for(var k in j)f.hasOwnProperty(k)||(f[k]=j[k])}}for(e in f)c._toggle(f[e],b)}c._save()},destroy:function(){a.removeData(this.$el),this.$el.find("li:has(ul) > a").unbind("click"),this.$el.find("li:has(ul) > a > span").unbind("click")}},a.fn.navgoco=function(c){if("string"==typeof c&&"_"!==c.charAt(0)&&"init"!==c)var d=!0,e=Array.prototype.slice.call(arguments,1);else c=a.extend({},a.fn.navgoco.defaults,c||{}),a.cookie||(c.save=!1);return this.each(function(f){var g=a(this),h=g.data("navgoco");h||(h=new b(this,d?a.fn.navgoco.defaults:c,f),g.data("navgoco",h)),d&&h[c].apply(h,e)})};var c=null;a.fn.navgoco.defaults={caretHtml:"",accordion:!1,openClass:"open",save:!0,cookie:{name:"navgoco",expires:!1,path:"/"},slide:{duration:400,easing:"swing"},onClickBefore:a.noop,onClickAfter:a.noop,onToggleBefore:a.noop,onToggleAfter:a.noop}}(jQuery);
     </script>

@@ -7,10 +7,23 @@
           <!-- <h1 class="welcome">Welcome, <%= current_user.first_name %> </h1> -->
           <h4><%= link_to "Find Student to Sponsor", new_search_path %></h4>
           <!-- [ FOLLOWING ] ============================================-->
-          <h3>Following</h3>
-          <% @sponsored_students.each do |student| %>
-          <%= link_to student.student.first_name, student_show_path(student.student)%><br>
-          <% end %><br/>
+          <div class="col-md-6">
+          <div class="panel widget-mini">
+          <div class="panel-body">
+          <i class="icon-user"></i>
+              <span class="total text-center"><%= @sponsored_students.count%></span>
+              <span class="title text-center">Following</span>
+              <% @sponsored_students.each do |student| %>
+              <%= link_to student.student.first_name, student_show_path(student.student)%><br>
+              <% end %>
+          </div>
+          </div>
+          </div>
+
+
+
+
+
           <!-- [ EACH CHALLENGES ] ============================================-->
           <h3>Challenges</h3>
           <% current_user.challenged_students.each do |row| %>
@@ -53,35 +66,79 @@
 <% if current_user.status == 'student' %>
       <% if current_user.id == @user.id %>
       <!-- [ FOLLOWERS ] ===================================================-->
-      <h1>Followers</h1>
-      <% @student_sponsors.each do |row|%>
-      <%= User.find(row.sponsor_id).first_name%><br>
-      <% end %>
+      <div class="col-md-6">
+      <div class="panel panel-solid-success widget-mini">
+      <div class="panel-body">
+      <i class="icon-user"></i>
+          <span class="total text-center"><%= @student_sponsors.count %></span>
+          <span class="title text-center">Followers</span>
+      </div>
+      </div>
+      </div>
+
       <!-- [ CHALLENGES ] ===================================================-->
-      <h1>Challenges</h1>
-      <% @challenges.each do |challenge| %>
-      <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
-      <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
-      <% end %>
+
+      <div class="col-md-6">
+      <div class="panel panel-solid-info widget-mini">
+      <div class="panel-body">
+      <i class="icon-user"></i>
+
+          <span class="total text-center"><%= @challenges.count %></span>
+          <span class="title text-center">Challenges</span>
+      </div>
+      </div>
+      </div>
+
       <!-- [ ACCEPTED CHALLENGES ] ==========================================-->
-      <h1>Challenges Accepted</h1>
-      <% StudentChallenge.where(:accepted => true).each do |challenge|%>
-      <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
-      <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
-      <% end %>
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div class="panel panel-default browser-chart">
+      <div class="panel-heading">
+      <h3 class="panel-title">Accepted Challenges</h3>
+      </div>
+      <div class="panel-body">
+      <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+        <% StudentChallenge.where(:accepted => true).each do |challenge|%>
+        <%= link_to Challenge.find(challenge.challenge_id).name, challenge_path(challenge) %> From:
+        <%= link_to User.find(challenge.sponsor_id).first_name, user_path(User.find(challenge.sponsor_id)) %><br>
+        <% end %>
+      </div>
+      </div>
+      </div>
+      </div>
+      </div>
+
       <!-- [ NEEDS ] ==========================================-->
-      <h1>Needs</h1>
-      <b> <%= link_to "Create a Need", new_student_need_path %></b>
-      <!-- List Needs -->
+
+      <div class="col-xs-12 col-sm-6 col-md-6 col-lg-3">
+      <div class="panel panel-default browser-chart">
+      <div class="panel-heading">
+      <h3 class="panel-title">NEEDS</h3>
+      </div>
+      <div class="panel-body">
+      <div class="row">
+      <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+
       <% current_user.student_needs.where(state: 'pending').each do |student_need| %>
       <p><%= link_to student_need.need.title, student_need_path(student_need) %><br/>
           Start Date: <%= student_need.start_date.to_formatted_s(:long) %><br/>
           End Date: <%= student_need.end_date.to_formatted_s(:long) %><br/>
       </p>
-        <%= link_to 'Edit your need', edit_student_need_path(student_need) %><br/>
       <%end%>
 
+      </div>
+
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+
+
+
       <!-- [ VIEWING OTHER PROFILES ] |||||||||||||||||||||||||||||||||||||||-->
+
       <% elsif current_user.id != @user.id %>
         <h3><%= @user.first_name %></h3>
         <h3><%= @user.status %></h3>
