@@ -11,7 +11,6 @@
  * file per style scope.
  *
  *= require_tree ../../../vendor/assets/stylesheets/.
-
  *= require_tree .
  *= require_self
  *= require jquery-ui
@@ -23,3 +22,8 @@
 @import "bootstrap";
 /* Some Style from the Bootstrap Default Theme */
 /* line 25, /Users/mubiynacasey/student-fund-me-app/app/assets/stylesheets/application.css.scss */
+/*!
+* Start Bootstrap - Agency Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
