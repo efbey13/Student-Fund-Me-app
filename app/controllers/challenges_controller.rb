@@ -21,7 +21,7 @@ class ChallengesController < ApplicationController
       flash[:notice] = "Challenge successfully created"
     else
       StudentChallenge.create(:challenge_id => @challenge.id,:student_id=>User.find_by(:first_name => params[:user][:name]).id, :sponsor_id=> current_user.id)
-      UserMailer.challenged_email(current_user, User.find_by(:first_name => params[:user][:name])).deliver_now
+      # UserMailer.challenged_email(current_user, User.find_by(:first_name => params[:user][:name])).deliver_now
       flash[:notice] = "Challenge successfully created"
     end
     redirect_to user_path(current_user)

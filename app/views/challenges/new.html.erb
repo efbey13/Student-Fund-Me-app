@@ -18,7 +18,7 @@
     </div>
     <div class="form-group">
     <%= label_tag :students_to_challenge %>
-    <%= select("user", "name", current_user.sponsored_students.all.collect {|u| User.find(u).first_name}, prompt: 'All') %>
+    <%= select("user", "name", current_user.sponsored_students.all.collect {|u| User.find(u.student_id).first_name}, prompt: 'All') %>
 
   </div>
 
