@@ -420,18 +420,19 @@
                     <!--========================================================
                      [ MENU Button ]
                     =========================================================-->
+                    <% if current_user.status == 'sponsor'%>
                     <li class="nav-dropdown">
                       <a href="/challenges/new" title="UI Elements">
                       <i class="fa  fa-fw fa-cogs"></i> Create A Challenge
                       </a>
-                    </li> --><!-- end nav-drop down-->
-
+                    </li> <!-- end nav-drop down-->
+                    <% end %>
                     <% if current_user.status == 'sponsor'%>
                     <li class="nav-dropdown">
                       <a href="/searches/new" title="UI Elements">
                       <i class="fa  fa-fw fa-cogs"></i> Search For Student
                       </a>
-                    </li> --><!-- end nav-drop down-->
+                    </li> <!-- end nav-drop down-->
                     <% end %>
 
                     <% if current_user.status == 'student'%>
@@ -439,7 +440,7 @@
                       <a href="/student_needs/new" title="UI Elements">
                       <i class="fa  fa-fw fa-cogs"></i> Create Need
                       </a>
-                    </li> --><!-- end nav-drop down-->
+                    </li> <!-- end nav-drop down-->
                     <% end %>
 
 
@@ -458,8 +459,8 @@
                           <a href="ui-buttons.html" title="Buttons"><%= User.find(row.sponsor_id).first_name %></a>
                           <% end %>
 
-                          </ul> -->
-                    </li>  end nav-drop down-->
+                          </ul>
+                    </li>
                     <%end%>
 
                     <% if current_user.status == 'sponsor'%>
@@ -474,8 +475,8 @@
                           <a href="ui-buttons.html" title="Buttons"><%= link_to student.student.first_name, student_show_path(student.student)%></a>
                           <% end %>
 
-                          </ul> -->
-                    </li>  end nav-drop down-->
+                          </ul>
+                    </li>
                     <%end%>
 
 
@@ -506,8 +507,8 @@
                           <a href="ui-tabs-accordions.html" title="Tabs &amp; Accordions">Tabs &amp; Accordions</a>
                           </li>
                           </ul> -->
-                    <!-- </li>  end nav-drop down--> -->
-                    <!-- </ul> end nav nav-pills nav-stacked"--> -->
+                    <!-- </li>  end nav-drop down-->
+                    <!-- </ul> end nav nav-pills nav-stacked"-->
                     </nav>
         </aside>
 
